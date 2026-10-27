@@ -1,51 +1,961 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>思有引力 · 你的哲学人格</title><style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap');
-:root{--bg:#f7f4ee;--surface:#fffdf9;--ink:#302a3c;--sub:#837d8a;--purple:#6c4aab;--light:#ede6fa;--line:#e8e1dc;--gold:#c99453}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans','PingFang SC','Microsoft YaHei',sans-serif}button,input,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.55;cursor:wait}h1,h2,h3,p{margin-top:0}.serif{font-family:'Noto Serif SC',serif}.app{min-height:100vh;display:flex}.sidebar{width:236px;position:sticky;top:0;height:100vh;padding:35px 21px;background:#f1ebe4;border-right:1px solid #e3d9d0;display:flex;flex-direction:column}.brand{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:700;letter-spacing:1px}.brand-icon{width:38px;height:38px;background:#7051a4;border-radius:12px;color:white;display:grid;place-items:center;font-size:21px}.tagline{color:var(--sub);font-size:11px;letter-spacing:2px;margin:7px 0 47px 50px}.nav{display:flex;gap:10px;align-items:center;padding:14px 15px;border:none;border-radius:12px;color:#635b68;background:transparent;text-align:left;margin:4px 0;width:100%;font-size:14px}.nav:hover,.nav.active{background:#e4d8f3;color:#624394;font-weight:700}.nav .glyph{font-size:19px;width:23px}.sidebar-bottom{margin-top:auto;font-size:12px;color:#827889;line-height:1.8;padding:10px}.online-dot{display:inline-block;background:#a6a1a6;border-radius:50%;width:8px;height:8px;margin-right:5px}.online-dot.on{background:#7eb788}.main{flex:1;min-width:0}.top{height:77px;padding:0 54px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.top small{color:#918993;font-size:12px}.top .right{display:flex;align-items:center;gap:13px;font-size:13px}.coin{color:#ae7c39;background:#f3e8d1;border-radius:50px;padding:8px 12px}.avatar{height:34px;width:34px;display:grid;place-items:center;background:#d8cbef;border-radius:50%;color:#63458c}.content{max-width:1150px;margin:auto;padding:43px 52px 70px}.eyebrow{font-size:11px;color:#866bb0;letter-spacing:3px;font-weight:700;margin-bottom:14px}.hero{display:flex;gap:30px;min-height:330px;background:#eae1d8;border-radius:24px;position:relative;overflow:hidden;padding:51px 53px}.hero:after{content:'';position:absolute;width:310px;height:310px;border:1px solid #cdbbac;border-radius:50%;right:75px;top:25px}.hero:before{content:'✧';position:absolute;color:#b89667;font-size:210px;right:120px;top:44px;line-height:1;z-index:1}.hero-copy{z-index:2;max-width:550px}.hero h1{font-family:'Noto Serif SC',serif;font-size:40px;line-height:1.45;margin:0 0 14px}.hero p{font-size:14px;color:#766d73;line-height:2;max-width:455px}.primary{background:#704bac;color:#fff;border:1px solid #704bac;border-radius:11px;padding:13px 23px;font-weight:600}.primary:hover{background:#58328d}.outline{background:transparent;color:#684899;border:1px solid #bba6d2;border-radius:11px;padding:12px 21px}.small{padding:9px 14px;font-size:12px}.actions{display:flex;gap:12px;align-items:center;margin-top:24px;flex-wrap:wrap}.sectionhead{display:flex;justify-content:space-between;align-items:center;margin:34px 0 16px}.sectionhead h2{font-size:19px;margin:0;font-family:'Noto Serif SC',serif}.sectionhead span{font-size:12px;color:#968c94}.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.feature{background:var(--surface);border:1px solid var(--line);border-radius:17px;padding:24px;min-height:170px;cursor:pointer;transition:transform .2s}.feature:hover{transform:translateY(-3px);border-color:#d0bedf}.feature .ico{font-size:28px;margin-bottom:15px}.feature h3{font-size:16px;margin:0 0 7px}.feature p{font-size:12px;color:var(--sub);line-height:1.8}.layout2{display:grid;grid-template-columns:1.3fr .7fr;gap:19px}.panel{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px}.panel h2{font-size:21px;font-family:'Noto Serif SC',serif}.muted{font-size:13px;color:var(--sub);line-height:1.9}.mode-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin:22px 0}.mode{padding:19px 12px;border:1px solid var(--line);background:#fff;border-radius:13px;text-align:center;color:var(--ink)}.mode.active{background:#f2ecfb;border-color:#8d69c2;box-shadow:inset 0 0 0 1px #8d69c2}.mode strong{display:block;font-size:16px;margin:8px 0}.mode small{display:block;color:var(--sub);font-size:12px;line-height:1.7}.chat{height:440px;overflow-y:auto;display:flex;flex-direction:column;gap:17px;padding:17px;background:#faf8f5;border:1px solid var(--line);border-radius:14px;margin:16px 0}.bubble{max-width:87%;background:#fff;border:1px solid #ece4dc;border-radius:17px 17px 17px 5px;padding:15px 17px;font-size:14px;line-height:1.9;white-space:pre-wrap}.bubble.user{align-self:flex-end;background:#eee6fb;border-color:#ded0f3;border-radius:17px 17px 5px 17px}.bubble .by{display:block;color:#987db3;font-size:11px;font-weight:700;margin-bottom:5px}.send{display:flex;align-items:stretch;gap:10px}.send textarea{flex:1;min-height:65px;max-height:160px;resize:vertical;border:1px solid #e3d8db;border-radius:12px;background:#fff;padding:13px;outline-color:#aa8ace}.send button{min-width:95px}.meter{height:7px;background:#eae3e6;border-radius:10px;overflow:hidden}.meter>i{display:block;height:100%;background:#8664bd;transition:width .25s}.ph-card{background:linear-gradient(150deg,#e7d9c4,#f8eddc 60%,#e3d1e7);border:1px solid #c9b99c;border-radius:20px;padding:27px;max-width:450px;color:#4a3e49;box-shadow:0 10px 28px #5a445a12}.ph-card .seal{text-align:center;color:#8e735b;font-size:11px;letter-spacing:3px}.ph-symbol{height:135px;display:grid;place-items:center;font-size:82px;color:#89719d;text-shadow:3px 5px 0 #d7c4c8}.ph-card h2{text-align:center;font-size:31px;margin:0 0 4px}.ph-card .who{text-align:center;color:#826c7c;font-size:14px}.tags{display:flex;justify-content:center;flex-wrap:wrap;gap:7px;margin:18px 0}.tag{background:#ffffff6b;padding:5px 11px;border:1px solid #d5c4b9;border-radius:30px;font-size:12px}.quote{text-align:center;line-height:1.9;font-size:13px;min-height:51px}.barrow{display:grid;grid-template-columns:90px 1fr 36px;gap:9px;align-items:center;font-size:12px;margin:14px 0}.bar{height:8px;border-radius:10px;background:#eee7f1;overflow:hidden}.bar i{display:block;background:#9474bf;height:100%;border-radius:10px}.people{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.person{border:1px solid var(--line);border-radius:15px;background:#fffcf8;text-align:left;padding:20px;cursor:pointer}.person:hover{border-color:#9e82bf}.person .face{font-size:45px;text-align:center;background:#f2eae3;border-radius:13px;padding:13px;margin-bottom:13px}.person h3{font-size:16px;margin-bottom:5px}.person p{font-size:12px;color:var(--sub);line-height:1.7;margin-bottom:0}.discussion{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.chip{border:1px solid #d9c9e7;border-radius:22px;padding:8px 11px;font-size:12px;background:#faf7ff;color:#73519c}.chip:hover{background:#eee6f8}.quiz-box{margin-top:22px;background:#f4eee8;border-radius:16px;padding:25px}.quiz-box h3{font-size:18px;line-height:1.7}.quiz-option{background:#fffaf6;padding:13px;border:1px solid #e4d9d1;border-radius:10px;margin:9px 0;cursor:pointer;font-size:13px}.quiz-option:hover{border-color:#936dbb}.notice{font-size:12px;line-height:1.7;color:#846a88;background:#f1eaf5;border-radius:10px;padding:11px;margin:13px 0}.empty{text-align:center;color:#938899;padding:36px 0}.hidden{display:none!important}.result-grid{display:grid;grid-template-columns:450px 1fr;gap:24px;align-items:start}.footer-note{font-size:11px;color:#aaa0a6;margin-top:22px}.legend{display:flex;justify-content:space-between;color:#a69aa7;font-size:11px}.top-title{font-family:'Noto Serif SC',serif;font-size:29px;margin:0 0 9px}.portrait{background:#f1e7dc;padding:21px;border-radius:15px;text-align:center;font-size:39px;margin-bottom:12px}.result-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}#toast{position:fixed;bottom:25px;right:30px;background:#36293e;color:#fff;padding:13px 18px;border-radius:10px;z-index:20;display:none;font-size:13px}.mobile-nav{display:none}@media(max-width:1000px){.sidebar{width:190px}.content{padding:30px 25px}.top{padding:0 25px}.result-grid{grid-template-columns:1fr 1fr}.hero h1{font-size:34px}.hero:before{right:25px;opacity:.55}}@media(max-width:720px){.sidebar{display:none}.mobile-nav{display:flex;position:fixed;bottom:0;left:0;right:0;background:#fffaf5;border-top:1px solid #e5dae0;z-index:10;justify-content:space-around;padding:10px 3px}.mobile-nav button{background:none;border:0;color:#766d79;font-size:11px;display:grid;justify-items:center;gap:2px}.mobile-nav span{font-size:20px}.mobile-nav button.active{color:#724caa}.top{height:56px;padding:0 17px}.content{padding:25px 15px 110px}.hero{padding:30px 23px;min-height:285px}.hero h1{font-size:29px}.hero:before{font-size:120px;right:4px;top:18px;opacity:.22}.hero:after{right:-65px;top:30px}.three,.people{grid-template-columns:1fr 1fr}.layout2,.result-grid{grid-template-columns:1fr}.mode-grid{grid-template-columns:1fr}.mode{text-align:left;padding:12px 16px}.mode strong{display:inline;margin-right:10px}.mode small{display:inline}.panel{padding:20px}.feature{padding:16px}.ph-card{max-width:none}.chat{height:390px}.keybar{padding:10px 15px;flex-wrap:wrap}.keybar span{width:100%}}
-.keybar{display:flex;gap:8px;align-items:center;padding:10px 54px;border-bottom:1px solid var(--line);background:#fffdf9}.keybar span{font-size:12px;color:#827889;white-space:nowrap}.keybar input{flex:1;min-width:0;border:1px solid #e3d8db;border-radius:10px;padding:9px 12px;background:#fff}
-</style></head><body><div class="app"><aside class="sidebar"><div class="brand"><span class="brand-icon">✧</span>思有引力</div><div class="tagline">PHILOSOPHY · SELF</div><div id="sideNav"></div><div class="sidebar-bottom"><span class="online-dot" id="apiDot"></span><span id="apiState">检测对话引擎中…</span><div style="margin-top:12px">答案没有标准，思想值得探索。<br>© 2026 思有引力 DEMO</div></div></aside><main class="main"><header class="top"><small>PHILOSOPHICAL PERSONA LAB / 思想探索空间</small><div class="right"><span class="coin">✦ <span id="coinTop">0</span> 思想火花</span><div class="avatar">我</div></div></header><form class="keybar" onsubmit="saveUserKey();return false"><span>你的密钥</span><input id="userKey" type="password" autocomplete="off" spellcheck="false" placeholder="粘贴你的 DeepSeek 密钥"><button class="primary small" type="submit">使用</button><button class="outline small" type="button" onclick="clearUserKey()">清除</button></form><div id="view" class="content"></div></main></div><div class="mobile-nav" id="mobileNav"></div><div id="toast"></div>
-<script>
-const $=id=>document.getElementById(id);const BASE=[{id:'kong',name:'仁义守护者',person:'孔子',icon:'◈',keys:['仁爱','责任','和谐'],desc:'你重视人与人之间的责任，也愿意以善意维系关系。',color:'#775f95'},{id:'lao',name:'顺势观察者',person:'老子',icon:'☯',keys:['自然','柔韧','无为'],desc:'你相信柔韧与从容的力量，善于看清事物变化。'},{id:'zhuang',name:'逍遥探索者',person:'庄子',icon:'🦋',keys:['自由','开放','超越常规'],desc:'你珍视精神自由，总能看见常规之外的可能。'},{id:'mo',name:'兼爱实践者',person:'墨子',icon:'✦',keys:['公正','兼爱','务实'],desc:'你在乎实际行动，也希望善意跨越亲疏边界。'},{id:'meng',name:'道德理想家',person:'孟子',icon:'✿',keys:['恻隐','义理','信念'],desc:'你愿意坚守内心的道义，相信人能够向善。'},{id:'han',name:'理性秩序者',person:'韩非',icon:'▣',keys:['制度','规则','现实'],desc:'你关注规则与制度，在现实约束中寻求秩序。'},{id:'su',name:'真理追问者',person:'苏格拉底',icon:'?',keys:['质疑','反思','求真'],desc:'你习惯追问原因，愿意不断修正已有看法。'},{id:'ya',name:'理性实践家',person:'亚里士多德',icon:'⌘',keys:['德性','理性','中道'],desc:'你追求理性与实践之间恰当的平衡。'},{id:'kang',name:'原则坚守者',person:'康德',icon:'◇',keys:['义务','原则','尊严'],desc:'你重视一致的道德原则和人的不可替代的尊严。'},{id:'mi',name:'幸福权衡者',person:'密尔',icon:'☼',keys:['幸福','自由','后果'],desc:'你关心决定带来的真实影响，也珍视个体自由。'},{id:'ni',name:'价值创造者',person:'尼采',icon:'⚡',keys:['创造','超越','勇气'],desc:'你愿意突破旧有观念，探索属于自己的价值。'},{id:'ma',name:'现实批判者',person:'马克思',icon:'❖',keys:['实践','社会','结构'],desc:'你善于思考个人选择背后的社会条件。'}];
-const DIMS=['原则与后果','个体与群体','理想与秩序','理性与经验','主动与顺势','信念与现实'];const QUESTIONS=[['一个朋友为了帮助他人，违反了一条重要规则，虽然帮助了很多人，但也破坏了公平。你会如何看待他的选择？','道德判断'],['如果稳定的生活意味着你必须放弃一直想追求的自由，你会如何取舍？','自由与秩序'],['当你的想法和身边大多数人不同，你通常会如何行动？','个体与群体'],['有人告诉你，他很幸福，但这种幸福建立在一个美丽的谎言之上。你会告诉他真相吗？','真实与幸福'],['遇到没有明确答案的难题时，你通常更相信逻辑推演、亲身经历，还是别人的经验？','认识方式'],['你努力许久的事情突然被不可控的事件打乱，你会怎么应对？','面对变化'],['如果你能让更多人受益，但必须让自己或个别人承担代价，你会如何决定？','公共利益'],['你觉得一个人一生中最重要的事情是什么？为什么？','人生意义'],['一条规则已经过时，但很多人依然遵循，你会建议废除还是维持？','制度与革新'],['一位朋友说人生没有固定意义，你会赞同、反驳，还是提出其他看法？','意义与存在'],['你认为一个好人最重要的特质是什么？','德性与道德'],['面对一次失败，你更愿意从自己、运气、环境还是社会因素寻找原因？','行动与条件'],['如果人人都可以自己制定规则，你觉得世界会变得更好还是更糟？','自由与规范'],['别人批评你的信念太理想化，你会如何回应？','理想与现实'],['你相信人性本善，还是认为善良需要后天培养？','人性'],['一个结果非常好但过程并不公平的决定，你能接受吗？','过程与结果'],['当个人目标与集体需要冲突时，你觉得如何平衡最合理？','责任'],['如果你发现自己一直坚信的观点缺乏依据，你会怎么处理？','反思'],['在你心中，自由与安全，哪一个更不能失去？','自由'],['如果你只能给年轻时的自己一句忠告，你会说什么？','人生哲学']];
-let S={page:'home',mode:12,turn:0,answers:[],testMsgs:[],ended:false,result:null,coins:0,figure:'zhuang',figureMsgs:[],online:false,thinking:false,completed:0,dailyDay:'',dailyChoice:-1};try{Object.assign(S,JSON.parse(localStorage.getItem('phy_demo')||'{}'));S.thinking=false}catch{}const persist=()=>{let copy={...S,thinking:false};localStorage.setItem('phy_demo',JSON.stringify(copy))};const escapeHtml=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const toast=s=>{let e=$('toast');e.textContent=s;e.style.display='block';setTimeout(()=>e.style.display='none',2600)};
-const nav=[['home','⌂','发现'],['test','✎','人格测试'],['hall','☷','哲学对话馆'],['library','▧','思想图鉴'],['me','◉','我的']];function header(title,sub=''){return `<div class="eyebrow">PHILOSOPHICAL EXPLORATION</div><h1 class="top-title">${title}</h1><p class="muted">${sub}</p>`};function render(){let ns=nav.map(([id,ico,title])=>`<button class="nav ${S.page===id?'active':''}" onclick="go('${id}')"><span class="glyph">${ico}</span>${title}</button>`).join('');$('sideNav').innerHTML=ns;$('mobileNav').innerHTML=nav.filter(x=>x[0]!=='test').map(([id,ico,title])=>`<button class="${S.page===id?'active':''}" onclick="go('${id}')"><span>${ico}</span>${title}</button>`).join('');$('coinTop').textContent=S.coins;let content={home:home,test:testView,result:resultView,hall:hallView,library:libraryView,me:meView}[S.page]||home;$('view').innerHTML=content();persist();if(S.page==='test'||S.page==='hall'){let e=$('chatbox');if(e)e.scrollTop=e.scrollHeight}}function go(p){S.page=p;render();window.scrollTo({top:0,behavior:'smooth'})}function addCoins(n){S.coins+=n;toast(`获得 ${n} 思想火花 ✦`)}
-function home(){return `<div class="hero"><div class="hero-copy"><div class="eyebrow">A JOURNEY INTO YOUR MIND</div><h1>你的灵魂，<br>与哪位哲学家同频？</h1><p>在一次次选择与追问中，发现自己的思想底色。与哲学家交谈，让探索从此刻开始。</p><div class="actions"><button class="primary" onclick="go('test')">开启哲学人格测试 ↗</button><button class="outline" onclick="go('hall')">去哲学对话馆</button></div></div></div><div class="sectionhead"><h2>从这里开始思想冒险</h2><span>EXPLORE MORE →</span></div><div class="three"><div class="feature" onclick="go('test')"><div class="ico">✧</div><h3>发现哲学人格</h3><p>通过自由表达和 AI 追问，探索真正影响你选择的哲学价值。</p></div><div class="feature" onclick="go('hall')"><div class="ico">☷</div><h3>与哲学家对谈</h3><p>自由提问：关于幸福、自由、成长和生活里的困惑。</p></div><div class="feature" onclick="go('library')"><div class="ico">⌘</div><h3>收集思想图鉴</h3><p>阅读不同哲学家的思想，参与每日议题，解锁思想火花。</p></div></div><div class="sectionhead"><h2>今日哲学困境</h2><span>DAILY QUESTION</span></div>${dailyWidget()}`}
-function dailyWidget(){let today=new Date().toLocaleDateString('sv-SE');return `<div class="quiz-box"><div class="eyebrow">QUESTION OF THE DAY</div><h3>如果一条善意的谎言，能让你珍视的人永远快乐，你会选择说出真相吗？</h3>${['会。真实本身就很重要。','不会。幸福与感受同样值得珍惜。','视具体情境而定，想先了解后果。'].map((t,i)=>`<div class="quiz-option" onclick="daily(${i})">${S.dailyDay===today&&S.dailyChoice===i?'✓ ':''}${t}</div>`).join('')}<p class="muted" id="dailyExplanation">${S.dailyDay===today?'从康德的义务伦理到后果主义，都可以提供不同的思考角度。':'选择一个答案，看看不同的哲学视角。'}</p></div>`}function daily(i){let d=new Date().toLocaleDateString('sv-SE');if(S.dailyDay!==d){addCoins(10)}S.dailyDay=d;S.dailyChoice=i;render()}
-function testView(){if(S.ended)return resultView();let started=S.testMsgs.length>0;return `${header('哲学人格测试','给自己的思考留一点空间。这里没有标准答案，只有值得被倾听的你。')}<div class="layout2"><div class="panel"><h2>${started?'你的思想旅程':'选择你的探索深度'}</h2>${!started?`<p class="muted">你可以选择测试长度。AI 将在固定轮次内，依据你的回答调整问题，最后综合所有回答进行人格匹配。</p><div class="mode-grid">${[[6,'灵感速测','3–5 分钟'],[12,'标准探索','8–12 分钟'],[20,'深度哲思','15–20 分钟']].map(([n,label,t])=>`<button class="mode ${S.mode===n?'active':''}" onclick="S.mode=${n};render()"><strong>${label}</strong><small>${n} 轮 · ${t}</small></button>`).join('')}</div><button class="primary" onclick="startTest()">开始探索 · ${S.mode} 轮 ↗</button>`:`<div class="legend"><span>第 ${Math.min(S.turn+1,S.mode)} / ${S.mode} 轮</span><span>${Math.round(100*S.turn/S.mode)}%</span></div><div class="meter"><i style="width:${100*S.turn/S.mode}%"></i></div><div class="chat" id="chatbox">${S.testMsgs.map(m=>bubble(m)).join('')}${S.thinking?'<div class="bubble">正在梳理你的想法…</div>':''}</div><form class="send" onsubmit="sendAnswer(event)"><textarea id="answerBox" ${S.thinking?'disabled':''} placeholder="输入你的真实想法，表达多一点也没关系…" required></textarea><button class="primary" ${S.thinking?'disabled':''}>发送 ↗</button></form><div class="actions"><button class="outline small" onclick="restartTest()">重新开始</button><span class="muted">你的回答仅保存在当前设备（若启用 AI 则会用于请求模型）。</span></div>`}</div><div class="panel"><div class="portrait">✷</div><h2>思想探索小贴士</h2><p class="muted">不需要学习过哲学，也无需刻意回答得“正确”。你可以描述自己遇到的真实场景、感受和犹豫。</p><p class="notice">当前模式：<strong>${S.online?'DeepSeek AI 联网模式':'本地演示模式'}</strong><br>${S.online?'AI 将依据你的回答追问，测试结束后尝试给出解释性匹配。':'可体验完整流程；当前问题按设计好的情境顺序展开，结果仅供原型展示。'}</p></div></div>`}
-const bubble=(m,speaker)=>`<div class="bubble ${m.role==='user'?'user':''}"><span class="by">${m.role==='user'?'我':'✧ '+(speaker||'哲思引导者')}</span>${escapeHtml(m.content)}</div>`;
-function startTest(){S.turn=0;S.answers=[];S.ended=false;S.result=null;S.testMsgs=[{role:'assistant',content:'欢迎来到思有引力。请放轻松，我们会通过生活中的情境探寻你的思考方式。\n\n第 1 轮 · '+QUESTIONS[0][1]+'\n'+QUESTIONS[0][0]}];go('test')}function restartTest(){S.testMsgs=[];S.answers=[];S.turn=0;S.ended=false;S.result=null;render()}
-function userKey(){return (localStorage.getItem('phy_user_key')||'').trim()}function saveUserKey(){let v=($('userKey').value||'').trim();if(!v){toast('请先填写密钥');return}localStorage.setItem('phy_user_key',v);$('userKey').value='';toast('密钥只保存在这台浏览器');status()}function clearUserKey(){localStorage.removeItem('phy_user_key');if($('userKey'))$('userKey').value='';toast('已清除本机密钥');status()}
-async function api(messages){const key=userKey();if(key){let resp=await fetch('https://api.deepseek.com/chat/completions',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},body:JSON.stringify({model:'deepseek-chat',messages,temperature:0.75,max_tokens:1100})});let d=await resp.json().catch(()=>({}));if(!resp.ok)throw new Error((d.error&&d.error.message)||'密钥或网络无效');return d.choices[0].message.content}let resp=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages})});let d=await resp.json();if(!resp.ok)throw new Error(d.error||'连接失败');return d.content}
-async function sendAnswer(e){e.preventDefault();if(S.thinking)return;let el=$('answerBox');let ans=el.value.trim();if(!ans)return;S.answers.push(ans);S.testMsgs.push({role:'user',content:ans});S.turn++;S.thinking=true;render();try{if(S.turn>=S.mode){await finishTest()}else{let next=QUESTIONS[S.turn];let prompt=`你是哲学人格测评的温柔引导者。测评共${S.mode}轮，当前需要提出第${S.turn+1}轮问题。每轮只问一个问题，不要提前给出结果。根据用户上文，围绕「${next[1]}」生成一个自然、真实的生活情境问题，可与上轮建立联系。120字以内，不要选项。` ;let context=S.testMsgs.slice(-10).map(x=>({role:x.role,content:x.content}));let reply=S.online?await api([{role:'system',content:prompt},...context]):`第 ${S.turn+1} 轮 · ${next[1]}\n${next[0]}`;S.testMsgs.push({role:'assistant',content:reply})}}catch(e){toast('AI 暂不可用，已切换本地情境');S.testMsgs.push({role:'assistant',content:`第 ${S.turn+1} 轮 · ${QUESTIONS[S.turn][1]}\n${QUESTIONS[S.turn][0]}`})}finally{S.thinking=false;render()}}
-const LEX={kong:['责任','家人','家庭','关系','礼','孝','和谐','互相'],lao:['顺其自然','放下','随缘','不强求','接受','自然'],zhuang:['自由','不拘','随心','自在','不同角度','可能'],mo:['帮助','平等','公平','所有人','行动','实用'],meng:['善良','良心','正义','道德','同情'],han:['规则','制度','秩序','惩罚','规范','法律'],su:['为什么','质疑','思考','反思','怀疑','问题'],ya:['理性','平衡','适度','中间','分析','习惯'],kang:['原则','底线','义务','尊严','应该','普遍'],mi:['结果','幸福','后果','利益','最多','减少伤害'],ni:['突破','创造','超越','自我','独特','挑战'],ma:['社会','环境','结构','现实','阶级','资源']};
-function localAnalysis(){let txt=S.answers.join(' '),scores=BASE.map(p=>({id:p.id,s:LEX[p.id].reduce((a,w)=>a+(txt.split(w).length-1),0)}));scores.sort((a,b)=>b.s-a.s);let seed=[...txt].reduce((a,c)=>a+c.charCodeAt(0),0);let best=scores[0].s>0?scores[0].id:BASE[seed%BASE.length].id;let idx=BASE.findIndex(x=>x.id===best);return {id:best,similar:scores.filter(x=>x.id!==best).slice(0,2).map(x=>x.id),dimensions:DIMS.map((_,i)=>35+(seed*(i+3)+idx*17)%55),reason:`从本次 ${S.mode} 轮情境回答来看，你经常会思考选择背后的价值与影响。你曾表达：“${(S.answers.find(a=>a.length>10)||S.answers[0]||'').slice(0,75)}”。这与该人格原型的部分关注点相吻合。`,motto:'在每一次追问里，遇见更辽阔的自己。'}}
-async function finishTest(){let result=localAnalysis();if(S.online){try{let raw=await api([{role:'system',content:'你是学术谨慎的哲学人格分析师。只依据用户所有回答匹配最相近的哲学家原型。候选id与人物：'+BASE.map(p=>p.id+':'+p.person).join('、')+'。请只返回JSON对象，禁止markdown：{"id":"候选id","similar":["候选id","候选id"],"dimensions":[55,55,55,55,55,55],"reason":"具体援引用户言论的160字中文分析，同时解释这是思想类比并非科学诊断","motto":"20字以内的原创哲学宣言"}。六维分数取0-100，勿假装心理测量有效性。'}, {role:'user',content:S.answers.map((a,i)=>`第${i+1}轮 [${QUESTIONS[i][1]}]：${a}`).join('\n')}]);let obj=JSON.parse(raw.replace(/```(?:json)?/g,'').trim());if(BASE.some(p=>p.id===obj.id)&&Array.isArray(obj.dimensions)&&obj.dimensions.length===6){result={...result,...obj};result.similar=(obj.similar||[]).filter(id=>BASE.some(x=>x.id===id)&&id!==obj.id).slice(0,2);result.dimensions=obj.dimensions.map(n=>Math.max(0,Math.min(100,Number(n)||50)))}}catch(e){toast('分析暂时不可用，使用本地匹配演示')}}S.result=result;S.ended=true;S.completed++;addCoins(50);S.page='result'}
-function portraitCard(r){let p=BASE.find(x=>x.id===r.id)||BASE[0];return `<div class="ph-card" id="personaCard"><div class="seal">✧ PHILOSOPHICAL SOUL ✧</div><div class="ph-symbol">${p.icon}</div><div class="seal">YOUR PHILOSOPHICAL PERSONA</div><h2 class="serif">${p.name}</h2><div class="who">${p.person}型 · THE PHILOSOPHICAL SELF</div><div class="tags">${p.keys.map(t=>`<span class="tag">${t}</span>`).join('')}</div><div class="quote">${escapeHtml(r.motto||p.desc)}</div><div class="seal" style="border-top:1px solid #c9b8a6;padding-top:18px;margin-top:15px">思有引力 · DISCOVER YOUR MIND</div></div>`}
-function resultView(){if(!S.result)return `${header('你的哲学人格','完成一场测试即可解锁属于你的哲学人格。')}<button class="primary" onclick="go('test')">开始测试 ↗</button>`;let p=BASE.find(x=>x.id===S.result.id)||BASE[0],r=S.result;return `${header('你的哲学人格已揭晓','思想从不只有一种形状，而你拥有自己独特的观察世界的方式。')}<div class="result-grid"><div>${portraitCard(r)}<div class="result-actions"><button class="primary small" onclick="saveCard()">↓ 保存人格卡 PNG</button><button class="outline small" onclick="copyResult()">复制分享文案</button></div></div><div class="panel"><div class="eyebrow">YOUR PHILOSOPHICAL PROFILE</div><h2>与你最同频的是：${p.person}</h2><p class="muted">${p.desc}</p><h3 style="margin-top:25px;font-size:15px">你的思想光谱</h3>${DIMS.map((d,i)=>`<div class="barrow"><span>${d}</span><div class="bar"><i style="width:${r.dimensions[i]}%"></i></div><b>${r.dimensions[i]}</b></div>`).join('')}<p class="footer-note">这些数值用于呈现原型结果，不是经过心理测量验证的量表分数。</p><h3 style="margin:27px 0 12px;font-size:16px">为什么会匹配这个人格？</h3><p class="muted">${escapeHtml(r.reason)}</p><h3 style="font-size:16px">与你可能共鸣的思想者</h3><p class="muted">${r.similar.map(id=>BASE.find(x=>x.id===id)?.person).filter(Boolean).join(' · ')||'继续探索更多流派'}</p><div class="actions"><button class="primary small" onclick="S.figure='${p.id}';S.figureMsgs=[];go('hall')">和 ${p.person} 聊聊 ↗</button><button class="outline small" onclick="restartTest();go('test')">再次测试</button></div></div></div>`}
-function hallView(){let p=BASE.find(x=>x.id===S.figure)||BASE[0];return `${header('哲学对话馆','邀请一位来自不同思想世界的向导，聊聊你真正关心的问题。')}<div class="layout2"><div class="panel"><h2>与 ${p.person} 对谈 <span style="font-weight:400;font-size:13px;color:#958a9d">· ${p.name}</span></h2><div class="chat" id="chatbox">${S.figureMsgs.length?S.figureMsgs.map(x=>bubble(x,p.person)).join(''):`<div class="bubble"><span class="by">✧ ${p.person} · AI 思想模拟</span>你好。我们可以聊聊自由、幸福、生活中的两难，或者任何让你感到好奇的事。你想从哪里开始？</div>`}${S.thinking?'<div class="bubble">正在思考这个问题…</div>':''}</div><div class="discussion">${['怎样才算真正的自由？','努力与幸福哪个更重要？','人应该坚持原则吗？'].map(t=>`<button class="chip" onclick="fillHall('${t}')">${t}</button>`).join('')}</div><form class="send" onsubmit="sendHall(event)"><textarea id="hallInput" required placeholder="把问题抛给思想家…" ${S.thinking?'disabled':''}></textarea><button class="primary" ${S.thinking?'disabled':''}>发送 ↗</button></form><p class="footer-note">AI 对历史思想的模拟演绎，并非哲学家真实发言。正式学习请结合原著。</p></div><div class="panel"><h2>选择一位思想家</h2><p class="muted">每位哲学家有不同的思考角度。</p><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">${BASE.map(x=>`<button class="chip" style="border-color:${x.id===p.id?'#7653af':''};background:${x.id===p.id?'#e7dcf6':''}" onclick="pickFigure('${x.id}')">${x.icon} ${x.person}</button>`).join('')}</div></div></div>`}
-function pickFigure(id){S.figure=id;S.figureMsgs=[];render()}function fillHall(t){$('hallInput').value=t;$('hallInput').focus()}
-function personaPrompt(p){
-  const shared='你在「思有引力」里陪当代用户思考。依据指定思想家的问题意识来回应，不要舞台腔，也不要声称自己是历史本人。\n规则：\n1. 中文，120到220字。\n2. 必须接住用户刚刚这句话里的具体事情和用词，先点出你听到的那个矛盾，再往前推进一步。\n3. 如果对话里已经有你的上一轮，禁止把同一段话换个问句再说一遍。用户补了新内容，就要出现一个新的分辨。\n4. 不编造原著原文，不编造历史细节。拿不准就直说拿不准。\n5. 结尾只问一个问题，而且这个问题要包含用户这句话里的某个词。';
-  const voice={
-    kong:'从孔子的想法来看：先问这件事把人与人放在什么位置。仁是在具体关系里成全别人，礼是让彼此都站得住的分寸，正名是把角色担起来。少谈抽象的自我解放。用户提到钱、工作或家人时，要问他准备怎样对待其中的人。',
-    lao:'从老子的想法来看：不要替用户选出胜负。看着他哪里抓得太紧，哪里把手段当成了目的。可以借柔、退、不争把问题松开，但不要每次都只说放下。用户谈赚钱、自由或成败时，要指出这一次的比较如何让心变紧。',
-    zhuang:'从庄子的想法来看：先怀疑问题是不是被框成了非此即彼。逍遥不是到处闯，而是不被一个必须卡住；不同的活法可以各有道理。用户若把赚钱和自由对立起来，就要谈论赚钱这件事本身，不要回落到一段与钱无关的自由通论。可以问他所谓的自由是怕穷、怕被人管，还是怕变成自己不喜欢的人。',
-    mo:'从墨子的想法来看：把目光从用户一个人挪到受影响的其他人。兼爱不是感情平均，而是好处和善意不要只停在亲近的人里。多问这个做法实际帮到谁、漏掉谁、代价由谁付。少做内心独白。',
-    meng:'从孟子的想法来看：从用户这句话里的不忍、羞耻或理直气壮看起。把义和利分开，但不把求安稳本身说成错。人有善端，不等于人已经很好。追问他做这个选择时，是心安，还是只觉得有利。',
-    han:'从韩非的想法来看：不靠心意和情怀下判断。看规则、赏罚，以及人们实际上会怎么做。只靠自觉往往站不住；没有边界时，就变成谁更强谁说了算。问题要落到能执行的安排，而不是道德口号。',
-    su:'从苏格拉底的想法来看：先检查用户用的词。幸福、自由、应该、赚钱，在问清他指的是哪一种之前，不要排座次。用反问把一个词拆成两三种意思，请用户选择。不要抢着发表长篇结论。',
-    ya:'从亚里士多德的想法来看：不要把努力和幸福、责任和快乐当成对立面。过得好，是把人的能力用得恰如其分，过度和不足都偏离。针对用户这次的处境，问他现在是太紧、太松，还是正在做成一件值得反复做的事。',
-    kang:'从康德的想法来看：先停一下哪样更有利。一个人能否被只当成工具，这个做法能否愿意成为人人都遵守的法则，比结果划算更先被问到。幸福可以希望，但不能充当这么做的理由。追问用户能否公开承认自己的做法。',
-    mi:'从密尔的想法来看：同时看感受和后果。自由的边界是不伤害别人。片刻的轻松，和一种能发展自己的生活，不要算成同一种快乐。把受影响的人算进来，问哪种做法留下的幸福更多、伤害更少。',
-    ni:'从尼采的想法来看：怀疑应该和更重要是谁规定的排名。不要劝用户顺从现成的评价。他若在谈赚钱和自由，就问这笔钱是在让他长出自己的标准，还是在讨好一套别人的奖状。避免空洞地喊超越。',
-    ma:'从马克思的想法来看：先问这个选择发生在什么条件里。赚钱、加班和不自由常常是安排的结果，不只是念头没转过来。不要只做心理安慰。问谁在制定规则、谁拿到结果、谁承担代价，以及他缺的是一个想法，还是一个能落地的处境。'
-  };
-  return shared+'\n\n'+(voice[p.id]||'')+'\n表述时说「从'+p.person+'的想法来看」，不要自称就是'+p.person+'本人。关键词：'+p.keys.join('、')+'。';
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>思有引力 · 伦理立场</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap');
+:root{--paper:#fff;--card:#fff;--ink:#1c1a17;--muted:#5e574e;--line:#1c1a17;--red:#d7382e;--yellow:#f2c84b;--green:#1e8a46;--cyan:#0e7f99;--blue:#2c46c9;--purple:#6a35b0;--clay:#c4492a}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;background:#f6f1e8 center/cover no-repeat fixed}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+button:disabled{opacity:.55;cursor:wait}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+h1,h2,h3,p{margin-top:0}
+.serif{font-family:'Noto Serif SC',serif}
+.app{min-height:100vh;display:flex}
+.sidebar{width:212px;position:sticky;top:0;height:100vh;padding:26px 16px;background:var(--ink);color:#f6f0e4;display:flex;flex-direction:column}
+.brand{font-family:'Noto Serif SC',serif;font-size:28px;line-height:1.15;font-weight:700}
+.tagline{margin:8px 0 28px;font-family:Fraunces,serif;font-size:12px;letter-spacing:2px;color:#f2c84b}
+.nav{display:block;width:100%;text-align:left;padding:11px 10px;margin:2px 0;border:0;background:transparent;color:#f6f0e4;font-size:15px}
+.nav.active{background:var(--yellow);color:var(--ink);font-weight:700}
+.sidebar-bottom{margin-top:auto;font-size:12px;line-height:1.7;color:#c9c0b2}
+.online-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#8d867c;margin-right:6px}
+.online-dot.on{background:#8dce78}
+.main{flex:1;min-width:0}
+.top{min-height:64px;padding:14px 36px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:2px solid var(--ink);background:rgba(255,255,255,.9)}
+.top small{font-family:Fraunces,serif;letter-spacing:1px}
+.coin{background:var(--ink);color:var(--yellow);padding:6px 10px;font-size:13px}
+.keyform{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:10px 0}
+.keyform input{flex:1;min-width:180px;border:2px solid var(--ink);background:#fff;padding:8px 10px}
+.tape{display:inline-block;background:var(--ink);color:#f6f0e4;padding:4px 8px;font-family:Fraunces,serif;font-size:12px;letter-spacing:2px;font-weight:700}
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center;background:#fff;border:2px solid var(--ink);box-shadow:12px 12px 0 var(--ink);padding:28px 32px;overflow:visible}
+.hero-copy{position:relative;z-index:2}
+.paper-wrap{position:relative;width:100%;display:flex;justify-content:center;flex:1;perspective:1600px}
+.paper-nav{position:absolute;top:36vh;z-index:3;width:54px;height:54px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.62);box-shadow:0 6px 18px rgba(28,26,23,.16);color:var(--ink);font-family:Fraunces,serif;font-size:30px;line-height:1;display:grid;place-items:center;backdrop-filter:blur(4px)}
+.paper-nav:hover{background:rgba(255,255,255,.88)}
+.paper-nav.prev{left:max(8px,calc(50% - 600px))}
+.paper-nav.next{right:max(8px,calc(50% - 600px))}
+.paper-hint{margin:8px 0 0;text-align:center;font-family:Fraunces,serif;font-size:11px;letter-spacing:.16em;color:var(--muted)}
+.news{color:var(--ink);background:#f3efe4;padding:22px 36px 40px;display:flex;flex-direction:column;width:min(1120px,calc((100vh - 64px) * 297 / 210),calc(100% - 120px));min-height:calc(100vh - 64px);margin:0 auto;align-self:center;box-shadow:0 18px 48px rgba(28,26,23,.16);touch-action:pan-y;transform-style:preserve-3d}
+.news.dragging{user-select:none;cursor:grabbing}
+.mast{text-align:center;padding:6px 4px 0}
+.mast-en{margin:0;font-family:Fraunces,serif;letter-spacing:.38em;font-size:11px;text-transform:uppercase}
+.mast h1{font-family:'Noto Serif SC',serif;font-size:64px;letter-spacing:.34em;line-height:1;margin:2px 0 8px;text-indent:.34em;font-weight:700}
+.mast-rule{border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);height:5px;margin:0}
+.mast-meta{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:6px;padding-bottom:6px;border-bottom:1px solid var(--ink);font-family:Fraunces,serif;font-size:12px;letter-spacing:.06em}
+.mast-actions{margin:0;gap:18px}
+.mast-actions button{background:transparent;color:var(--ink);border:0;border-bottom:1px solid var(--ink);box-shadow:none;padding:0 0 1px;font-family:'Noto Serif SC',serif;font-size:14px;font-weight:700}
+.faces-line{display:flex;justify-content:center;align-items:center;gap:12px;margin:10px 0 0;padding-bottom:8px;border-bottom:1px solid rgba(28,26,23,.4)}
+.faces-cap{flex:none;white-space:nowrap;font-family:Fraunces,serif;font-size:11px;letter-spacing:.18em}
+.faces-line img{width:34px;height:44px;object-fit:cover;object-position:center 12%;filter:grayscale(1) contrast(1.08);background:transparent}
+.lead{margin:16px 0 0;padding-bottom:14px;border-bottom:3px double rgba(28,26,23,.72);display:grid;grid-template-columns:minmax(0,1fr) minmax(190px,250px);gap:18px 28px;align-items:start}
+.lead-main{min-width:0}
+.kicker{font-family:Fraunces,serif;letter-spacing:.16em;font-size:14px;margin:0 0 6px}
+.lead h2{font-family:'Noto Serif SC',serif;font-size:46px;line-height:1.25;margin:0 0 8px;font-weight:700;text-wrap:balance}
+.deck{font-family:'Noto Serif SC',serif;font-size:22px;line-height:1.6;margin:0 0 12px;text-wrap:balance}
+.lead-copy{column-count:1;column-gap:28px;column-rule:1px solid rgba(28,26,23,.28);column-fill:balance;font-family:'Noto Serif SC',serif;font-size:19px;line-height:1.85;text-align:justify}
+.lead-copy p{margin:0}
+.lead-copy p::first-letter{float:left;font-size:3.1em;line-height:.82;padding:4px 8px 0 0;font-weight:700}
+.lead-open{margin-top:14px;background:transparent;border:0;border-bottom:1px solid var(--ink);box-shadow:none;padding:0;font-family:'Noto Serif SC',serif;font-size:18px;font-weight:700}
+.lead-cast{display:flex;flex-direction:column;gap:16px;align-items:center}
+.lead-face{display:flex;flex-direction:column;align-items:center;width:100%;border:0;background:transparent;padding:0;color:var(--ink)}
+.lead-face img{width:100%;height:280px;object-fit:contain;object-position:center top;filter:grayscale(1) contrast(1.08);background:transparent}
+.lead-cast.many .lead-face img{height:188px}
+.lead-name{font-family:'Noto Serif SC',serif;font-size:28px;line-height:1.15;margin-top:2px}
+.lead-meta{font-family:Fraunces,serif;font-size:13px;letter-spacing:.14em;color:var(--muted)}
+.folio{margin-top:16px;flex:1}
+.folio-label{margin:0 0 12px;padding-bottom:4px;border-bottom:1px solid var(--ink);font-family:Fraunces,serif;letter-spacing:.22em;font-size:14px}
+.stories{column-width:240px;column-count:4;column-gap:28px;column-rule:1px solid rgba(28,26,23,.3);column-fill:balance}
+.story{display:block;width:100%;break-inside:avoid;margin:0 0 16px;padding:0 0 12px;border:0;border-bottom:1px solid rgba(28,26,23,.16);background:transparent;box-shadow:none;text-align:left;font-family:'Noto Serif SC',serif}
+.story .kicker{display:block;font-size:13px;letter-spacing:.14em;color:var(--muted);margin-bottom:4px}
+.story strong{display:block;font-size:21px;line-height:1.35;margin-bottom:6px}
+.story .ask{display:block;font-size:16px;line-height:1.65}
+.hero h1{font-family:'Noto Serif SC',serif;font-size:42px;line-height:1.22;margin:12px 0}
+.hero p{font-size:15px;line-height:1.75;color:var(--muted);max-width:560px}
+.cuts{display:grid;grid-template-columns:repeat(4,68px);gap:8px;margin:0;position:relative;z-index:2}
+.cut{position:relative;width:68px;height:86px;overflow:hidden;border:3px solid #fff;box-shadow:4px 4px 0 rgba(28,26,23,.22);background:#fff}
+.cut img,.poster .face,.profile-card .portrait{object-fit:cover;object-position:center 12%;display:block;background:#fff}
+.cut img{width:100%;height:100%}
+.content{max-width:1120px;margin:0 auto;padding:24px 28px 56px}
+body.front .main{display:flex;flex-direction:column;min-height:100vh}
+body.front .content{flex:1;display:flex;flex-direction:column;align-items:center;max-width:none;width:auto;margin:0;padding:0;background:transparent}
+.primary,.outline,.small{border:2px solid var(--ink);padding:11px 16px;background:#fff}
+.primary{background:var(--ink);color:#f6f0e4;box-shadow:4px 4px 0 var(--red);font-weight:700}
+.small{padding:8px 12px;font-size:13px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:14px}
+.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:22px 0 12px}
+.sectionhead h2{font-family:'Noto Serif SC',serif;font-size:26px;margin:0}
+.sectionhead span{font-family:Fraunces,serif;font-size:13px;letter-spacing:1px}
+.issue-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.people{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:stretch}
+.scatter{position:relative;height:980px}
+.scatter .poster{position:absolute;width:228px;transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}
+.scatter .poster:nth-child(1){top:6px;left:0;transform:rotate(-7deg)}
+.scatter .poster:nth-child(2){top:54px;left:34%;transform:rotate(5deg)}
+.scatter .poster:nth-child(3){top:0;right:0;transform:rotate(-3deg)}
+.scatter .poster:nth-child(4){top:360px;left:2%;transform:rotate(4deg)}
+.scatter .poster:nth-child(5){top:410px;left:38%;transform:rotate(-6deg)}
+.scatter .poster:nth-child(6){top:340px;right:2%;transform:rotate(3deg)}
+.scatter .poster:nth-child(7){top:700px;left:18%;transform:rotate(-2.5deg)}
+.scatter .poster:hover{transform:rotate(0deg) translateY(-12px) scale(1.04);box-shadow:12px 16px 0 var(--ink);filter:brightness(1.08);z-index:5}
+.scatter .poster .face{transition:transform .18s ease}
+.scatter .poster:hover .face{transform:rotate(3deg) scale(1.05)}
+.poster{min-height:0;border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:14px 36px 14px 14px;position:relative;text-align:left;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}
+.poster.inked{color:var(--ink)}
+.school-tag{position:absolute;top:8px;right:8px;z-index:3;background:#fff;color:#1c1a17;border:2px solid #1c1a17;padding:3px 6px;font-size:11px;line-height:1.2;font-weight:700}
+.poster .vname{position:absolute;top:40px;right:8px;writing-mode:vertical-rl;letter-spacing:2px;font-family:Fraunces,serif;font-size:12px;font-weight:700}
+.poster .tick{position:absolute;right:10px;bottom:10px;z-index:4;width:28px;height:28px;border-radius:50%;background:#1c1a17;color:#f6f0e4;display:grid;place-items:center}
+.poster .tick svg{display:block}
+.poster .face{width:108px;height:140px;margin-bottom:14px;border:3px solid #fff;box-shadow:4px 5px 0 rgba(0,0,0,.22);transform:rotate(-4deg)}
+.mini{width:48px;height:62px;object-fit:cover;object-position:center 12%;border:2px solid var(--ink);vertical-align:middle;margin-right:8px;background:#fff}
+.poster h3{font-family:'Noto Serif SC',serif;font-size:28px;margin:0 0 4px}
+.poster p{margin:0;font-size:13px;line-height:1.5}
+.issue{position:relative;background:#fff;border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:0;text-align:left;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+.issue-body{display:flex;flex-direction:column;flex:1;padding:14px;background:#fff}
+.issue h3{font-family:'Noto Serif SC',serif;font-size:18px;line-height:1.35;margin:8px 0}
+.issue p{color:var(--muted);font-size:13px;line-height:1.65;margin-bottom:0}
+.layout2{display:grid;grid-template-columns:1.35fr .65fr;gap:14px;align-items:start}
+.panel{background:#fff;border:2px solid var(--ink);padding:22px}
+.panel h2{font-family:'Noto Serif SC',serif;font-size:26px}
+.muted{color:var(--muted);font-size:14px;line-height:1.8}
+.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.mode{border:2px solid var(--ink);background:#fff;padding:16px;text-align:left}
+.mode.active{background:var(--yellow);box-shadow:4px 4px 0 var(--ink)}
+.workspace .mode{border:1px solid rgba(28,26,23,.2);background:rgba(255,255,255,.66);box-shadow:none}
+.workspace .mode.active{background:rgba(242,200,75,.88);box-shadow:none}
+.mode strong{display:block;font-family:'Noto Serif SC',serif;font-size:20px}
+.choice-list{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.choice{text-align:left;border:1px solid rgba(28,26,23,.22);background:rgba(255,255,255,.62);padding:12px 14px;line-height:1.6;font-size:15px;box-shadow:none}
+.choice:hover{background:var(--yellow)}
+.chat{height:auto;min-height:180px;max-height:280px;overflow:auto;display:flex;flex-direction:column;gap:10px;padding:12px;background:#fff;border:2px solid var(--ink);margin:10px 0}
+.bubble{max-width:88%;background:#fff;border:2px solid var(--ink);padding:12px 14px;font-size:14px;line-height:1.8;white-space:pre-wrap;box-shadow:4px 4px 0 rgba(28,26,23,.12)}
+.bubble.user{align-self:flex-end;background:var(--yellow)}
+.bubble .by{display:block;font-size:11px;letter-spacing:1px;font-weight:700;margin-bottom:4px}
+.send{display:flex;gap:8px;align-items:stretch}
+.send textarea{flex:1;min-height:68px;border:2px solid var(--ink);background:#fff;padding:10px;resize:vertical}
+.discussion{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.cast{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.chip{border:2px solid var(--ink);background:#fff;padding:8px 10px;font-size:13px;text-align:left}
+.chip.on{background:var(--ink);color:#f6f0e4}
+.meter{height:8px;background:#eee;border:1px solid var(--ink)}
+.meter>i{display:block;height:100%;background:var(--red)}
+.legend{display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px}
+.profile{display:grid;grid-template-columns:300px 1fr;gap:18px;align-items:start}
+.profile-card{min-height:420px;border:2px solid var(--ink);box-shadow:10px 10px 0 var(--ink);padding:22px;color:#fff;position:sticky;top:16px}
+.profile-card.inked{color:var(--ink)}
+.profile-card .portrait{width:200px;height:260px;margin:16px 0;border:3px solid #fff;box-shadow:6px 8px 0 rgba(0,0,0,.22)}
+.profile-card h2{font-family:'Noto Serif SC',serif;font-size:36px;margin:0}
+.dossier h3{font-family:'Noto Serif SC',serif;font-size:18px;border-top:2px solid var(--ink);padding-top:12px;margin:18px 0 8px}
+.dossier p{line-height:1.85;font-size:15px}
+.works{padding-left:18px;line-height:1.8}
+.radar{max-width:460px;margin:4px 0 8px}
+.radar svg{width:100%;height:auto;display:block}
+.era{position:relative;background:#fff;border:2px solid var(--ink);border-left:8px solid var(--red);padding:12px 14px;margin:12px 0}
+.day-issue{position:relative}
+body.arena{overflow:hidden;height:100vh}
+body.arena .app{height:100vh;min-height:0;overflow:hidden}
+body.arena .main{height:100vh;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+body.arena .content{flex:1;min-height:0;max-width:none;width:auto;margin:0;padding:4px 16px 8px;display:flex;overflow:hidden}
+body.test-gate{background-color:#fff;background-image:none;overflow:hidden;height:100vh}
+body.test-gate .app{height:100vh;min-height:0}
+body.test-gate .main{height:100vh;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+body.test-gate .content{position:relative;flex:1;min-height:0;max-width:none;width:auto;margin:0;padding:4vh 0 0;background:#fff;display:flex;flex-direction:column;align-items:center;overflow:hidden}
+.test-hero{position:relative;z-index:1;width:min(880px,calc(100% - 48px));flex:none;text-align:center;color:var(--ink)}
+.test-stage{position:absolute;z-index:0;left:0;right:0;bottom:0;pointer-events:none}
+.test-stage img{width:100%;height:auto;display:block}
+.test-hero h1{font-family:'Noto Serif SC',serif;font-size:clamp(36px,4.6vw,58px);font-weight:700;line-height:1.25;margin:0 0 14px}
+.test-en{font-family:Fraunces,serif;font-size:clamp(22px,2.6vw,34px);margin:0 0 34px}
+.test-picks{display:flex;justify-content:center;align-items:flex-start;gap:56px;flex-wrap:wrap}
+.test-pick{display:flex;flex-direction:column;align-items:center;gap:12px}
+.test-pick>span{font-size:15px;font-weight:700;border-bottom:1px solid var(--ink);line-height:1.4}
+.test-opts{display:flex;gap:14px}
+.test-opt{border:1.5px solid var(--ink);background:#fff;border-radius:999px;padding:8px 22px;font-size:17px;line-height:1.3}
+.test-opt.on{background:var(--ink);color:#f6f0e4}
+.test-go{margin-top:26px;border:0;border-bottom:2px solid var(--ink);background:transparent;padding:0 2px 2px;font-family:'Noto Serif SC',serif;font-size:clamp(26px,3vw,36px);font-weight:700}
+@media(max-width:720px){
+body.test-gate .content{padding:28px 0 0}
+.test-stage{bottom:76px}
+.test-picks{gap:28px}
+.test-en{margin-bottom:22px}
 }
-function hallContext(){return S.figureMsgs.filter(m=>m.role==='user'||!/你问到「[\s\S]*若再从「/.test(m.content)).slice(-12)}
-async function sendHall(e){e.preventDefault();if(S.thinking)return;let v=$('hallInput').value.trim();if(!v)return;S.figureMsgs.push({role:'user',content:v});S.thinking=true;render();let p=BASE.find(x=>x.id===S.figure)||BASE[0];let reply='';try{if(!S.online)throw new Error('offline');reply=await api([{role:'system',content:personaPrompt(p)},...hallContext()])}catch(err){reply=userKey()?'这把密钥没能完成这次请求。请核对后再试。':(S.online?'这一轮没能连上模型，请再试一次。':'请先在页面上方填写你自己的 DeepSeek 密钥，再和'+p.person+'继续谈。');if(S.online)toast('模型暂不可用')}S.figureMsgs.push({role:'assistant',content:reply});if(S.figureMsgs.filter(x=>x.role==='user').length%3===0)addCoins(15);S.thinking=false;render()}
-function libraryView(){return `${header('思想图鉴','从先秦到现代，看看这十二位思想家如何理解我们的世界。')}<div class="people">${BASE.map(p=>`<div class="person" onclick="pickFigure('${p.id}');go('hall')"><div class="face">${p.icon}</div><h3>${p.person} <span style="font-size:12px;color:#998da2;font-weight:400">/ ${p.name}</span></h3><p>${p.keys.join(' · ')}</p><p>${p.desc}</p><div style="margin-top:12px;font-size:12px;color:#7753a5">与 TA 对话 ↗</div></div>`).join('')}</div>`}
-function meView(){return `${header('我的思想空间','保存在这台设备上的哲学探索记录。')}<div class="layout2"><div class="panel"><h2>我的哲学身份</h2>${S.result?`${portraitCard(S.result)}<div class="actions"><button class="primary small" onclick="go('result')">查看报告</button></div>`:'<div class="empty">你还没有生成哲学人格卡。<br><br><button class="primary" onclick="go(\'test\')">去做个测试</button></div>'}</div><div class="panel"><h2>探索数据</h2><div class="three" style="grid-template-columns:repeat(2,1fr)"><div class="feature" style="min-height:auto"><div class="ico">✦</div><h3>${S.coins}</h3><p>思想火花</p></div><div class="feature" style="min-height:auto"><div class="ico">✎</div><h3>${S.completed}</h3><p>完成测试</p></div></div><h3 style="margin-top:27px">数据与隐私</h3><p class="muted">测试记录保存在这台浏览器。你填写的密钥也只留在这台浏览器，请求时直接发给 DeepSeek，不会写进页面源码。请不要在对话里输入密码或身份证号。</p><button class="outline small" onclick="if(confirm('确认清空本设备的测试记录和积分？')){localStorage.removeItem('phy_demo');location.reload()}">清除本地数据</button></div></div>`}
-function copyResult(){let p=BASE.find(x=>x.id===S.result.id);navigator.clipboard?.writeText(`我在「思有引力」测出的哲学人格是：${p.name} · ${p.person}型！\n${S.result.motto}`).then(()=>toast('分享文案已复制')).catch(()=>toast('复制暂不可用'))}
-function saveCard(){if(!S.result)return;let p=BASE.find(x=>x.id===S.result.id),c=document.createElement('canvas');c.width=900;c.height=1200;let x=c.getContext('2d'),g=x.createLinearGradient(0,0,900,1200);g.addColorStop(0,'#e5d5c2');g.addColorStop(.6,'#f8eddd');g.addColorStop(1,'#dfcbe6');x.fillStyle=g;x.fillRect(0,0,900,1200);x.strokeStyle='#b6a18f';x.lineWidth=3;x.strokeRect(48,48,804,1104);x.fillStyle='#8f735c';x.textAlign='center';x.font='28px serif';x.fillText('✧ PHILOSOPHICAL SOUL ✧',450,130);x.fillStyle='#816b9a';x.font='180px serif';x.fillText(p.icon,450,400);x.fillStyle='#514155';x.font='bold 76px serif';x.fillText(p.name,450,565);x.font='36px serif';x.fillText(p.person+'型',450,630);x.fillStyle='#7c6876';x.font='28px sans-serif';x.fillText(p.keys.join(' · '),450,740);x.font='26px sans-serif';let text=S.result.motto||p.desc;for(let i=0;i<Math.ceil(text.length/21);i++)x.fillText(text.slice(i*21,(i+1)*21),450,835+i*44);x.fillStyle='#8b765d';x.font='24px serif';x.fillText('思有引力  ·  DISCOVER YOUR MIND',450,1093);let a=document.createElement('a');a.download=`哲学人格-${p.name}.png`;a.href=c.toDataURL('image/png');a.click();toast('人格卡已保存')}
-async function status(){const hasKey=!!userKey();let proxy=false;try{let r=await fetch('/api/status');let j=await r.json();proxy=!!j.online}catch{}S.online=hasKey||proxy;$('apiDot').classList.toggle('on',S.online);$('apiState').textContent=hasKey?'使用你填写的密钥':(proxy?'本机服务已连接':'请填写密钥，当前为演示');let input=$('userKey');if(input&&document.activeElement!==input)input.placeholder=hasKey?'已保存，可粘贴新密钥覆盖':'粘贴你的 DeepSeek 密钥';render()};status();
-</script></body></html>
+.round{position:relative;flex:1;width:100%;height:100%;min-height:0;margin:0;overflow:hidden}
+.round-seat{position:absolute;z-index:1;width:calc(var(--s) * clamp(168px,16vw,280px));margin-left:calc(var(--s) * clamp(-84px,-8vw,-140px));margin-top:calc(var(--s) * -16px);border:0;background:transparent;padding:0;color:var(--ink);mix-blend-mode:multiply}
+.round-seat .bust{display:block}
+.round-seat img{width:100%;height:calc(var(--s) * clamp(210px,20vw,340px));object-fit:cover;object-position:center 8%;display:block;filter:grayscale(1) contrast(1.06);background:transparent;-webkit-mask-image:linear-gradient(#000 68%,transparent 100%);mask-image:linear-gradient(#000 68%,transparent 100%)}
+.round-pill{position:absolute;z-index:4;transform:translate(-50%,0);margin-top:calc(var(--s) * clamp(78px,8vw,120px));white-space:nowrap;background:#f7f1e6;border:1.5px solid var(--ink);border-radius:999px;padding:5px 14px;font-family:'Noto Serif SC',serif;font-size:16px;font-weight:700;line-height:1.3;box-shadow:3px 3px 0 rgba(28,26,23,.14);color:var(--ink)}
+.round-pill.on{background:var(--yellow)}
+.round-pill.high{margin-top:calc(var(--s) * clamp(18px,2vw,36px))}
+.round-seat:hover{margin-top:calc(var(--s) * -24px)}
+.round-table{position:absolute;z-index:2;left:0;right:0;top:24%;bottom:0;background:#f4efe4;border:3px solid var(--ink);border-bottom:0;border-radius:50% 50% 0 0 / 46% 46% 0 0;box-shadow:0 16px 36px rgba(28,26,23,.1);display:flex;flex-direction:column;align-items:center;text-align:center;padding:64px 8% 12px;overflow:hidden}
+.round-table h2{font-family:'Noto Serif SC',serif;font-size:clamp(28px,3vw,42px);line-height:1.25;margin:8px 0;max-width:min(980px,88%);flex:none}
+.round-who{margin:0 0 8px;font-family:'Noto Serif SC',serif;font-size:18px;font-weight:700;flex:none}
+.round-line{margin:0;width:min(980px,90%);flex:1;min-height:0;overflow:auto;font-family:'Noto Serif SC',serif;font-size:18px;line-height:1.7}
+.round-line.wait{color:var(--muted)}
+.round-mine{margin:8px 0 0;width:min(920px,86%);font-size:16px;line-height:1.5;color:var(--muted);flex:none}
+.round-send{display:flex;gap:8px;width:min(920px,86%);margin-top:10px;flex:none}
+.round-send textarea{flex:1;height:76px;min-height:76px;max-height:76px;resize:none;border:2px solid var(--ink);background:rgba(255,255,255,.72);padding:12px 14px;font-size:18px}
+.round-adjust{margin-top:8px;border:0;border-bottom:1px solid var(--ink);background:transparent;padding:0;font-family:'Noto Serif SC',serif;font-size:16px;flex:none}
+.arena-board{display:grid;grid-template-columns:minmax(0,1fr) 220px minmax(0,1fr);grid-template-areas:'top top top' 'left table right' 'bottom bottom bottom';gap:16px 14px;align-items:center;margin:8px 0 16px}
+.lane-top{grid-area:top;display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+.lane-left{grid-area:left;display:flex;flex-direction:column;justify-content:center;gap:14px;align-items:stretch;min-width:0}
+.lane-right{grid-area:right;display:flex;flex-direction:column;justify-content:center;gap:14px;align-items:stretch;min-width:0}
+.lane-bottom{grid-area:bottom;display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+.table-core{position:relative;grid-area:table;width:210px;height:210px;margin:0 auto;border-radius:50%;border:3px solid var(--ink);box-shadow:7px 7px 0 var(--ink);background:#fff;display:grid;place-items:center;z-index:1}
+.table-ink{width:154px;height:154px;border-radius:50%;background:rgba(255,255,255,.94);border:2px solid var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px}
+.table-ink h2{font-family:'Noto Serif SC',serif;font-size:16px;line-height:1.35;margin:6px 0 4px}
+.seat-card{display:flex;gap:8px;align-items:flex-start;min-width:0;max-width:100%}
+.seat-card.side-left{flex-direction:row-reverse}
+.seat-card.above{flex-direction:column-reverse;align-items:center;width:min(100%,280px)}
+.seat-card.below{flex-direction:column;align-items:center;width:min(100%,280px)}
+.seat-btn{border:0;padding:0;background:transparent;flex:none}
+.seat-btn img{width:64px;height:82px;object-fit:cover;object-position:center 12%;display:block;border:3px solid #fff;box-shadow:4px 4px 0 rgba(28,26,23,.28);background:#fff}
+.seat-card.on .seat-btn img{outline:3px solid var(--ink);outline-offset:2px}
+.say{position:static;flex:1;min-width:0;max-width:100%;max-height:150px;overflow:auto;background:#fff;border:2px solid var(--ink);padding:8px 10px;font-size:12px;line-height:1.6;box-shadow:4px 4px 0 rgba(28,26,23,.14)}
+.seat-card.above .say,.seat-card.below .say{width:min(100%,240px);flex:none}
+.say .who{display:block;font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:3px}
+.say.wait{color:var(--muted)}
+.my-line{border:2px dashed var(--ink);padding:8px 12px;margin:0 0 10px;font-size:14px;line-height:1.65}
+.notice{font-size:13px;line-height:1.7;background:#fff;border:2px dashed var(--ink);padding:10px;margin:12px 0}
+.footer-note{font-size:12px;color:#6d655c;margin-top:10px}
+body.studio-lock{overflow:hidden;height:100vh}
+body.studio-lock .app{height:100vh;min-height:0;overflow:hidden}
+body.studio-lock .main{display:flex;flex-direction:column;height:100vh;min-height:0;overflow:hidden}
+body.studio-lock .content{flex:1;min-height:0;max-width:none;margin:0;padding:clamp(28px,4vh,56px) clamp(36px,5vw,96px) clamp(16px,2.5vh,32px);overflow:hidden;display:flex;align-items:stretch;justify-content:center;background:transparent}
+.workspace{flex:1;min-width:0;min-height:0;display:grid;gap:6px}
+.workspace.hall,.workspace.test{width:min(1040px,100%);height:100%;max-height:100%;flex:none;margin:0 auto;align-items:stretch}
+.workspace.hall{grid-template-columns:320px minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;grid-template-areas:"side talk" "dock dock";gap:16px}
+.workspace.test{grid-template-columns:280px minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;grid-template-areas:"side stage" "dock dock";gap:16px}
+.side-col{grid-area:side;min-width:0;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:12px}
+.portrait-stage{flex:1 1 150px;height:auto;min-height:108px;max-height:200px;background:rgba(255,255,255,.4);border:0;box-shadow:none;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:10px 10px 8px;overflow:hidden}
+.portrait-stage img{width:auto;max-width:86%;height:100%;max-height:calc(100% - 36px);object-fit:contain;object-position:center top}
+.portrait-name{font-family:'Noto Serif SC',serif;font-size:28px;line-height:1.2;margin-top:4px;text-shadow:0 0 8px #fff,0 0 6px #fff}
+.bio-card{flex:1.6 1 180px;min-height:0;background:rgba(255,255,255,.4);border:0;padding:12px 12px 10px;display:flex;flex-direction:column;overflow:hidden}
+.bio-card h2,.col-head h2{font-family:'Noto Serif SC',serif;font-size:24px;margin:0;text-shadow:0 0 8px #fff,0 0 6px #fff}
+.bio-card .small,.col-head .small{font-size:15px}
+.bio-card h2{font-size:26px}
+.bio-meta{font-size:16px;font-weight:700;margin:8px 0;text-shadow:0 0 8px #fff,0 0 6px #fff}
+.bio-scroll{flex:1;min-height:0;overflow:hidden}
+.bio-scroll p{font-size:18px;line-height:1.75;margin:0 0 8px;text-shadow:0 0 8px #fff,0 0 6px #fff}
+.face-row{display:flex;gap:4px;flex:none;flex-wrap:wrap;overflow:hidden;margin:0 0 8px}
+.face-pick{width:36px;height:46px;flex:none;padding:0;border:0;background:transparent;overflow:hidden}
+.face-pick img{width:100%;height:100%;object-fit:cover;object-position:center 12%;display:block}
+.face-pick.on{outline:3px solid var(--yellow);outline-offset:1px}
+.talk-card,.stage-card{min-width:0;min-height:0;background:rgba(255,255,255,.34);border:0;box-shadow:none;display:flex;flex-direction:column;overflow:hidden}
+.talk-card{grid-area:talk;padding:16px}
+.stage-card{grid-area:stage;padding:28px 36px;justify-content:flex-start;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain}
+.workspace .chat{flex:1;min-height:0;max-height:none;height:auto;margin:0;padding:4px 8px 4px 4px;background:transparent;border:0;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain}
+.talk-card .bubble{font-size:24px;line-height:1.75;background:rgba(255,255,255,.62);border:0;box-shadow:none;text-shadow:none}
+.talk-card .bubble.user{background:rgba(242,200,75,.72)}
+.talk-card .bubble .by{font-size:16px}
+.answered-col{background:transparent;border:0;padding:4px 8px;overflow:hidden;min-height:0}
+.col-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;flex:none}
+.answered-list{flex:1;min-height:0;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:8px}
+.answered-item{display:flex;gap:8px;background:rgba(255,255,255,.45);border:0;padding:8px 10px;text-shadow:none}
+.answered-item b{font-family:Fraunces,serif;font-size:15px}
+.answered-item strong{display:block;font-size:16px;line-height:1.4}
+.answered-item p{margin:3px 0 0;font-size:15px;line-height:1.5;color:var(--muted)}
+.answered-empty{margin:0;color:var(--muted);font-size:16px;line-height:1.7}
+.q-kicker{font-family:Fraunces,serif;letter-spacing:1px;font-size:16px;margin:0;text-shadow:0 0 8px #fff,0 0 6px #fff}
+.stage-card h2{font-family:'Noto Serif SC',serif;font-size:26px;margin:8px 0;text-shadow:0 0 8px #fff,0 0 6px #fff}
+.q-body{font-family:'Noto Serif SC',serif;font-size:28px;line-height:1.5;margin:8px 0 0;white-space:pre-wrap;text-shadow:0 0 8px #fff,0 0 6px #fff}
+.q-scene{color:var(--muted);font-size:17px;line-height:1.7;margin:14px 0 0;max-width:680px;text-shadow:0 0 8px #fff,0 0 6px #fff}
+.answered-empty,.dock .footer-note,.dock .muted{text-shadow:0 0 8px #fff,0 0 6px #fff}
+.dock{grid-area:dock;background:rgba(255,255,255,.32);border:0;padding:10px 12px;min-width:0;overflow:visible}
+.hints{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;overflow:visible;padding-bottom:8px}
+.hint{border:1px solid rgba(28,26,23,.28);background:rgba(255,255,255,.62);border-radius:999px;padding:8px 12px;font-size:15px;line-height:1.35;text-align:center;box-shadow:none}
+.hint:hover{background:var(--yellow)}
+.dock .send textarea{height:84px;min-height:84px;max-height:84px;resize:none;overflow-y:auto;background:rgba(255,255,255,.2);font-size:20px}
+.dock .footer-note,.dock .muted{font-size:16px;line-height:1.6}
+.dock .footer-note{margin:8px 0 0}
+.top-title{font-family:'Noto Serif SC',serif;font-size:36px;line-height:1.25;margin:8px 0}
+.content>.top-title,.content>.muted,.sectionhead h2{text-shadow:0 0 8px #fff,0 0 8px #fff}
+.check{display:flex;gap:8px;align-items:center;border:2px solid var(--ink);padding:8px;background:#fff}
+.check.on{background:var(--yellow)}
+.mobile-nav{display:none}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#f6f0e4;padding:12px 16px;display:none;z-index:30;font-size:14px}
+@media(max-width:1000px){.issue-grid,.people{grid-template-columns:1fr 1fr}.profile,.layout2{grid-template-columns:1fr}.profile-card{position:static}.hero{grid-template-columns:1fr}.hero h1{font-size:36px}.cuts{grid-template-columns:repeat(7,minmax(0,1fr))}.cut{width:auto;height:78px}.scatter{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:22px 16px}.scatter .poster{position:relative;width:auto;top:auto;right:auto;left:auto}.scatter .poster:nth-child(odd){transform:rotate(-2.5deg);margin-top:16px}.scatter .poster:nth-child(even){transform:rotate(2deg)}.workspace.hall,.workspace.test{grid-template-columns:220px minmax(0,1fr)}.q-body{font-size:24px}.stage-card{padding:20px}.lead{grid-template-columns:minmax(0,1fr) 168px}.lead-face img{height:200px}.lead-cast.many .lead-face img{height:132px}.lead-name{font-size:22px}.stories{column-count:2}.lead-copy{column-count:1}.lead h2{font-size:32px}.deck{font-size:18px}.lead-copy{font-size:17px}.mast h1{font-size:48px;letter-spacing:.2em;text-indent:.2em}}
+@media(max-width:720px){
+.sidebar{display:none}
+.mobile-nav{display:flex;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:2px solid var(--ink);z-index:20}
+.mobile-nav button{flex:1;border:0;background:transparent;padding:10px 2px;font-size:12px}
+.mobile-nav button.active{background:var(--yellow);font-weight:700}
+.top,.content{padding-left:16px;padding-right:16px}
+.top{flex-wrap:wrap;gap:8px}
+.top small{line-height:1.4}
+.keyform input{min-width:0;width:100%}
+.content{padding-bottom:96px}
+.hero{padding:18px 14px;box-shadow:7px 7px 0 var(--ink)}
+.cuts{grid-template-columns:repeat(4,minmax(0,1fr))}
+.cut{width:auto;height:64px}
+.hero h1{font-size:30px}
+.issue-grid,.people,.mode-grid,.discussion,.scatter{grid-template-columns:1fr}
+.scatter .poster{margin-top:0}
+body.arena .content{padding:8px 8px 72px}
+.round-table h2{font-size:26px}
+.round-line{font-size:16px}
+.round-send textarea{height:64px;min-height:64px;max-height:64px;font-size:16px}
+.arena-board{grid-template-columns:1fr;grid-template-areas:'top' 'table' 'left' 'right' 'bottom'}
+.table-core{width:200px;height:200px}
+.table-ink{width:148px;height:148px}
+.lane-left,.lane-right{align-items:stretch}
+.seat-card.side-left{flex-direction:row}
+body.studio-lock{overflow:hidden;height:100dvh}
+body.studio-lock .app{height:100dvh;overflow:hidden}
+body.studio-lock .main{height:100dvh;min-height:0;overflow:hidden;display:flex;flex-direction:column}
+body.studio-lock .content{display:flex;overflow:hidden;flex:1;min-height:0;height:auto;padding:12px 12px 76px}
+.workspace.hall,.workspace.test{display:grid;width:100%;height:100%;grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr) auto}
+.workspace.hall{grid-template-areas:"side" "talk" "dock"}
+.workspace.test{grid-template-areas:"side" "stage" "dock"}
+.hints{grid-template-columns:1fr 1fr}
+.side-col{max-height:32vh}
+.portrait-stage{height:112px;min-height:0;max-height:112px;flex:none}
+.bio-card{max-height:none;flex:1;min-height:0}
+.talk-card,.stage-card{min-height:0}
+.answered-col{max-height:32vh}
+.q-body{font-size:22px}
+body.front .content{padding:0 0 84px}
+.news{width:calc(100% - 24px);max-width:none;min-height:calc(100vh - 128px);padding:14px 16px 24px}
+.paper-nav{top:auto;bottom:92px;width:44px;height:44px;border-radius:50%;font-size:26px;background:rgba(255,255,255,.72)}
+.paper-nav.prev{left:2px}
+.paper-nav.next{right:2px}
+.mast-en{letter-spacing:.08em}
+.mast h1{font-size:36px;letter-spacing:.14em;text-indent:.14em}
+.mast-meta{flex-wrap:wrap}
+.lead{grid-template-columns:1fr;gap:12px}
+.lead-cast{flex-direction:row;justify-content:center;align-items:flex-end}
+.lead-face{width:min(180px,46%)}
+.lead-face img,.lead-cast.many .lead-face img{height:150px}
+.lead-name{font-size:22px}
+.lead h2{font-size:28px}
+.deck{font-size:18px}
+.lead-copy{font-size:17px}
+.lead-copy,.stories{column-count:1}
+}
+@media(min-width:1280px){.lead{grid-template-columns:minmax(0,1fr) minmax(220px,280px)}.lead-copy{column-count:2}.lead-face img{height:320px}.lead-cast.many .lead-face img{height:200px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand">思有引力</div>
+  <div class="tagline">ETHICS POSTER</div>
+  <div id="sideNav"></div>
+  <div class="sidebar-bottom"><span class="online-dot" id="apiDot"></span><span id="apiState">检测对话引擎中…</span><div style="margin-top:12px">七位思想家，八个议题。<br>© 2026 思有引力</div></div>
+</aside>
+<main class="main">
+  <header class="top"><small>YOU ARE INVITED / 伦理立场实验室</small><span class="coin">✦ <span id="coinTop">0</span> 思想火花</span></header>
+  <div id="view" class="content"></div>
+</main>
+</div>
+<nav class="mobile-nav" id="mobileNav"></nav>
+<div id="toast"></div>
+<script>
+const $=id=>document.getElementById(id);
+const SHOW=['kant','noddings','bentham','aristotle','scanlon','gilligan','mill'];
+function lineup(){return SHOW.map(person)}
+function posterCard(p,onclick,mark){return `<button class="poster ${p.on==='#1c1a17'?'inked':''}" style="background:${p.color};color:${p.on}" onclick="${onclick}"><span class="school-tag">${p.school}</span><span class="vname">${mark||p.en}</span><img class="face" src="${p.img}" alt="${p.person}"><h3>${p.person}</h3><p>${p.years}</p><p>${p.keys.join(' · ')}</p></button>`}
+const BASE=[
+{id:'bentham',img:'img/character/2-边沁.svg',person:'边沁',en:'BENTHAM',school:'功利主义',years:'1748–1832',color:'#d7382e',on:'#fff',keys:['总体幸福','每个人算一份','苦乐'],
+identity:'英国法学家、社会改革者，古典功利主义的主要陈述者。他一生大部分时间在推动法律、监狱和选举改革，而不是在大学里讲课。',
+ideas:'道德上对的行为，是在受影响的人中间带来最大幸福的行为。快乐和痛苦可以按强度、持续时间、确定程度和远近加以比较，这套办法常被叫做幸福计算。他强调每个人都算一份，不因身份加码。他不太区分快乐的“高雅”和“低级”，这一点后来被密尔改写。',
+works:['《道德与立法原理导论》（1789）','《政府片论》'],
+anecdote:'他留下遗嘱，希望死后以“自体圣像”的方式留在伦敦大学学院。现在人们见到的是骨架配上蜡制头像，真头因为保存失败被另行存放。会议纪录里有时会戏称他“出席但未投票”。这是学院至今还在讲的事，不是道德论证本身。',
+voice:'先把受影响的人一一列出来，问哪种做法让痛苦的总量更小。不要先谈谁更配得。用户如果只顾一个人的委屈，提醒还有谁被漏出账本。不要假装快乐都能精确打分，但要坚持比较必须公开。',
+hello:'把这件事里会疼的人先点名。晋升、工资、监控或一台设备，我都想先看总体少受多少苦。你要算的是哪一笔账？'},
+{id:'mill',img:'img/character/4-密尔.svg',person:'密尔',en:'MILL',school:'功利主义',years:'1806–1873',color:'#f2c84b',on:'#1c1a17',keys:['伤害原则','高级快乐','个体自由'],
+identity:'英国哲学家、经济学家，一度担任国会议员。他在边沁和自己父亲詹姆斯·密尔的功利主义传统里长大，后来把这个传统改得更重视自由、个性和讨论。',
+ideas:'他仍以幸福为道德标准，但认为快乐有种类之别：运用理智、想象和同情的生活，不同于只求安逸的刺激。在《论自由》里，他为思想、言论和生活方式留出空间，限制自由的主要理由是防止伤害他人，而不是因为多数人不喜欢。他也论证妇女应享有同等的公民资格。',
+works:['《论自由》（1859）','《功利主义》（1863）','《妇女的屈从地位》（1869）'],
+anecdote:'他幼年就被安排高强度学习，二十岁前后经历过一次严重的精神崩溃，后来把读诗当作恢复感受力的一部分。《论自由》题献给哈丽雅特·泰勒，密尔明确说书中不少想法来自两人长期的共同讨论。1867年他在国会提出修正，希望选举权条文里的“男人”改为“人”，修正案没有通过。',
+voice:'同时看幸福和自由。片刻的安全或利润，不等于一种能够发展自身能力的生活。若多数人的方便建立在某个人无法退出的伤害上，要停下来。用户把两种快乐当成同一种时，请他分辨。',
+hello:'边沁会先加总。我会多问一句：这种幸福会不会把某个人的生活压扁，而且对方无法拒绝。你想谈的是哪一种压法？'},
+{id:'kant',img:'img/character/1-康德.svg',person:'康德',en:'KANT',school:'义务论',years:'1724–1804',color:'#2c46c9',on:'#fff',keys:['绝对命令','人是目的','义务'],
+identity:'普鲁士哲学家，几乎一生住在柯尼斯堡。他同时写知识、道德、宗教和法权，道德哲学的核心文本是《道德形而上学奠基》。',
+ideas:'一个行为的道德价值不看它带来多少好处，而看它是否出自对道德法则的尊重。绝对命令的一种表述是：只按你能够愿意它成为普遍法则的准则去行动。另一种表述是：永远把人性当作目的，而不仅仅当作手段。人可以被雇用、被治疗、被安排岗位，但不能被只当成别人目标的工具。幸福值得希望，却不能充当“所以可以这样对待人”的理由。',
+works:['《纯粹理性批判》','《实践理性批判》','《道德形而上学奠基》（1785）'],
+anecdote:'关于他每日散步准时到可以让邻居对表，是流传很广的轶事，不必当成考据过的时钟实验。更值得记住的是他很少离开自己的城市，却坚持道德法则要对每一个理性存在者有效，而不是只对熟人有效。',
+voice:'先不要比较哪种结果更划算。问这条做法能不能被公开成所有人都遵守的规则，以及有没有人被仅仅当成工具。用户用“为了大家好”压过某一个人时，把那个人单独拎出来。',
+hello:'在问谁更受益之前，我想知道有没有人只是被拿来用。你现在面对的是规则、晋升，还是一台只够救一个人的设备？'},
+{id:'aristotle',img:'img/character/3-亚里士多德.svg',person:'亚里士多德',en:'ARISTOTLE',school:'德性伦理',years:'公元前384–前322',color:'#1e8a46',on:'#fff',keys:['实践智慧','中道','品格'],
+identity:'古希腊哲学家，柏拉图的学生，曾教过亚历山大大帝，后来在雅典吕克昂讲学、研究。传到今天的伦理学著作，很多是讲课传统留下的整理，不是一本一次性写成的手册。',
+ideas:'他追问的是怎样才算一个过得好的人，而不只是哪一个行为单独算对。繁荣的生活要运用理性，并在具体处境里找到过度与不足之间的中道。勇敢、公正、慷慨都是品格，靠习惯长成，也靠实践智慧判断这一次该怎么做。人在他看来是城邦中的动物：单独计算个人快感，漏掉了共同生活本身要培养的能力。',
+works:['《尼各马可伦理学》','《政治学》','《修辞学》'],
+anecdote:'吕克昂的人常被叫做逍遥学派，和一边走动一边讨论的教学方式有关。后来他离开雅典时，古代记载留下这样一层意思：他不愿让雅典人对哲学再犯一次罪。这是转述，不是一块幸存的碑。',
+voice:'不要把对立的两个选项当成全部。问这个实践——工作、家庭、城邦——本来在培养什么样的人，这一次是太紧、太松，还是刚好让人做得成一件值得反复做的事。少下抽象定义，多问习惯。',
+hello:'先别急着选边。我想知道这件事情若反复做下去，会把人养成什么样。你说的是工厂、家庭，还是一笔奖学金？'},
+{id:'gilligan',img:'img/character/5-卡罗尔·吉利根.svg',person:'吉利根',en:'GILLIGAN',school:'关怀伦理',years:'1936–',color:'#0e7f99',on:'#fff',keys:['不同的声音','关系中的责任','倾听'],
+identity:'美国心理学家、伦理学家，长期在哈佛等工作。1982年的《不同的声音》挑战了把道德发展只理解成越来越抽象的公正推理这一幅图景。',
+ideas:'她认为当时流行的道德量表更会给“权利、规则、不偏不倚”打高分，而把“我离开这段关系谁会受伤、我怎样才不算抛弃”这种叙述当成不够成熟。这另一种声音强调在具体关系里回应责任。她后来一再说明：这不是在主张女性天生更会关怀，也不是说公正不重要，而是说一种被压低的道德语言需要被听见。用它来给性别贴标签，恰恰和她要纠正的做法相似。',
+works:['《不同的声音：心理学理论与妇女发展》（1982）'],
+anecdote:'书的材料来自她倾听人们怎样讲述真实的道德两难，其中包括女性如何叙述堕胎决定。这项研究后来争议很大。讨论她时可以谈方法上的争论，不要把书里的访谈改写成她没写过的结论。',
+voice:'先听用户在保护哪段关系，怕抛弃谁。不要把关怀说成女性天性，也不要嘲笑公正。帮他把“谁会受伤”说具体：是制度里的人，还是他不愿意对不起的某一个人。',
+hello:'你可以先不讲原则。告诉我：如果按你现在的想法做，谁会被留下，谁会觉得自己被扔下。你心里已经有一个具体的人了吗？'},
+{id:'noddings',img:'img/character/6-内尔·诺丁斯.svg',person:'诺丁斯',en:'NODDINGS',school:'关怀伦理',years:'1929–2022',color:'#6a35b0',on:'#fff',keys:['关怀关系','被关怀者','教育'],
+identity:'美国教育哲学家，曾在斯坦福大学任教。她做过数学教师和学校管理者，后来把关怀写成一种伦理，也写成一种办学方式。2022年去世。',
+ideas:'关怀不是关怀者单方面宣布“我很关心你”。它是一段关系：关怀者把注意力真正投到对方的处境里，并在动机上有所挪移；被关怀者的接受和回应，也是这段关系能否成立的一部分。她讨论过自然关怀和需要努力维持的伦理关怀。用在制度上，她会问学校、医院和家庭有没有把照顾组织成日常，而不是只在守则里写一句以人为本。',
+works:['《关怀：伦理和道德教育的女性进路》（1984）','后来关于学校为何要学会关心的论述'],
+anecdote:'她并不希望关怀永远被叫成“女性的”。早期书名里的 feminine 后来常被她自己放宽：关怀是人类关系里的一种实践，不是某一性别的专利。记住她当过教师，比记住一句励志口号更接近她的问题。',
+voice:'问照顾是否真的到达了被照顾的人，而不是停留在关怀者的自我感动。制度若只给原则、不给时间、人手和回应，就还没有形成关怀。用户说“我已经很关心了”时，问对方有没有感到被接住。',
+hello:'关心如果只停在嘴上，关系并没有成立。你想谈的是家庭里的照料、医院里的选择，还是公司对一个要休产假的人？'},
+{id:'scanlon',img:'img/character/7-托马斯·斯凯伦.svg',person:'斯坎伦',en:'SCANLON',school:'契约主义',years:'1940–',color:'#c4492a',on:'#fff',keys:['合理拒斥','对每个人可辩护','理由'],
+identity:'美国道德哲学家，哈佛大学教授。契约主义的当代代表之一。他的问题不是“怎样让总数最大”，而是“我们彼此亏欠什么样的对待”。',
+ideas:'一个行为若被任何一套别人可以合理拒斥的原则所允许，它就是错的。判断要站到每一个相关的人的立场上：这个人能否基于恰当的理由拒绝那条原则。痛苦很重要，但不是因为可以把所有人的痛苦加总后覆盖某一个人的异议，而是因为当事人能提出理由。想要某样东西，本身还不构成理由；理由需要能向他人陈述。',
+works:['《我们彼此亏欠什么》（1998）'],
+anecdote:'这本书的英文书名后来因一部电视剧被更多门外的读者看到。剧情里的计分系统不是他的理论。他的论证刚好反对把道德做成一个可以互相抵销的总分。',
+voice:'不要问总数高不高。问在场的每一个人，有没有一条他们无法合理拒绝的原则。用户用“整体更好”带过某个人的损失时，请他向那个人解释，而不是向平均数解释。',
+hello:'请你试着向会被这决定击中的那一个人解释。不是向平均数解释。你要辩护的是监控、裁员，还是只救其中一个人？'}
+];
+const ISSUES=[
+{id:'birth',color:'#d7382e',title:'女性职场中的生育与晋升困境',ask:'一位女性因为生育错过晋升，公司应该如何处理？',scene:'一位同事怀孕前后业绩稳定，晋升窗口却被推迟。公司说这是岗位需要，她认为自己承担了不被计入的代价。',era:'二十世纪后半叶，同等就业机会被写进许多地方的法律，但怀孕、产假和谁来照料孩子，仍然经常落在女性身上。今天的争论往往不是还能不能上班，而是一次晋升里，公司把照料当成个人私事，还是当成组织该一起计算的成本。',tension:'同等规则，还是把照料的代价算进来',lenses:['自由主义女性主义','激进女性主义','社会主义女性主义','交叉性女性主义','关怀伦理'],school:'关怀伦理',bg:'img/background/背景4.png'},
+{id:'factory',color:'#f2c84b',title:'一家工厂应该由谁管理？',ask:'企业经营利润应该分给谁？谁拥有生产决策权？',scene:'一家厂利润不错。出资人认为决策和分红都应归自己，车间里的人认为没有他们就没有这些利润，命令不该只从上头来。',era:'工业革命以后，工厂把劳动和决策分开。二十世纪出现过工人委员会、合作社和国家计划等不同实验。这道题要问的不是哪一个标签更先进，而是利润和命令权如果只停在出资人手里，干活的人还算不算这件事的共同作者。',tension:'出资人的命令，还是劳动者的共同决定',lenses:['市场社会主义','计划社会主义','参与式社会主义','工人自治','无政府共产主义'],school:'契约主义',bg:'img/background/背景2.png'},
+{id:'housework',color:'#1e8a46',title:'家务劳动是否应该获得报酬？',ask:'一位全职照顾家庭的人，是否有权获得独立收入？',scene:'家里有人全职照料孩子和老人，没有工资，离开这段关系就几乎没有收入。另一位家人认为爱不该谈钱，家务是自己选择的。',era:'一九七〇年代，“家务付酬”曾是一场具体的政治主张：照护被排除在工资之外，做这些事的人就很难离开一段关系。今天的问题仍然直接——全职照料家庭的人，有没有一份不靠伴侣施舍的收入。',tension:'爱的礼物，还是应被承认的劳动',lenses:['马克思主义女性主义','社会主义女性主义','自由主义女性主义','关怀伦理'],school:'关怀伦理',bg:'img/background/背景4.png'},
+{id:'ai',color:'#2c46c9',title:'AI 取代劳动者后，财富归谁？',ask:'AI 让公司利润翻倍，同时裁掉大量员工，应该如何分配收益？',scene:'公司引入生成式工具后利润明显上升，同时裁掉一批岗位。留下的人更忙，离开的人得不到这些新增利润。',era:'这是近几年才变得尖锐的场面。工具让一些公司用更少的人做出更多利润，被裁掉的人自己承担转型。历史上的机器争论只能作对照。没有一位古代或十八世纪的作者写过这个案例，辩论时只能用他们的标准看这本新账。',tension:'利润归工具的主人，还是归被替换的劳动',lenses:['自由意志主义','罗尔斯式平等主义','市场社会主义','工人自治社会主义'],school:'契约主义',bg:'img/background/背景2.png'},
+{id:'scholarship',color:'#0e7f99',title:'奖学金应该奖励优秀还是帮助困难？',ask:'一笔有限的奖学金，是给成绩最高的人，还是最需要帮助的人？',scene:'名额只有一个。甲的分数最高，家庭也能支持他读书。乙分数稍低，不拿到这笔钱就可能辍学。',era:'奖学金一直同时被说成奖赏和救济。一种看法认为名额应奖给已经证明自己的人；另一种认为起点不同的人，同样的分数并不等于同样的努力，也不等于同样的需要。钱有限时，两种说法不能同时拿满。',tension:'奖给已证明的优秀，还是补给会中断学业的人',lenses:['功绩主义','运气平等主义','罗尔斯主义','功利主义','能力进路'],school:'功利主义',bg:'img/background/背景1.png'},
+{id:'medical',color:'#6a35b0',title:'医疗资源有限时应该先救谁？',ask:'一台救命设备只能救一个人，应该依据生存概率、等待顺序还是其他原则？',scene:'一台设备今晚只能给一个人。一位生存概率更高，一位已经等了更久，还有一位若得不到它就没有任何别的办法。',era:'从战场检伤到近年的疫情分配，救命资源不够时，人们用过生存概率、先来后到、抽签和优先照顾最脆弱者等规则。没有一种规则能让没被选中的人觉得自己只是被轻轻放过。',tension:'多救活一些人，还是不抛弃最没有退路的人',lenses:['功利主义','义务论','平等主义','关怀伦理'],school:'功利主义',bg:'img/background/背景1.png'},
+{id:'privacy',color:'#c4492a',title:'为了安全，社会可以牺牲多少隐私？',ask:'一项监控技术能显著降低犯罪率，但会记录所有人的活动。要不要用？',scene:'一种监控据说能明显降低暴力犯罪，代价是街上和网上的人都被持续记录，包括从未伤害过别人的人。',era:'边沁设计过全景监狱：让人觉得自己随时可能被看见。数字监控把类似结构放大到城市，并承诺换来更低的犯罪率。问题不再只是摄像头灵不灵，而是所有人都被记录的生活，能不能向被记录的人辩护。',tension:'少一些伤害，还是保留不被随时注视的生活',lenses:['自由主义','功利主义','共和主义','权利本位义务论'],school:'义务论',bg:'img/background/背景2.png'},
+{id:'community',color:'#1c1a17',title:'社区的重大决定应该由谁做？',ask:'面对一项重要公共工程，专家决策、居民投票和协商共识，哪种更合理？',scene:'社区要建一项工程。专家说数据支持马上开工，一部分居民会承担噪声和搬迁，投票可能很接近，慢慢协商又会错过工期。',era:'公共工程一旦开工，噪声、搬迁和好处不会平均落下。专家掌握信息，居民承担后果，协商则慢。民主理论长期在三种做法之间来回：谁更懂，谁承担，以及谁有资格替没在场的人点头。',tension:'懂行的人拍板，还是承担后果的人同意',lenses:['精英主义','参与式民主','审议民主','自由主义','多元主义'],school:'德性伦理',bg:'img/background/背景3.png'}
+];
+const CHOICES={
+birth:[
+{who:'kant',text:'晋升标准对所有人一样。不能因为生育把她单独排除，也不能为了照顾她改掉一条别人同样要遵守的规则。'},
+{who:'noddings',text:'公司要把照料算进安排，给她时间、岗位和回应，而不是只宣布一视同仁。'},
+{who:'bentham',text:'看哪种处理让她、一起工作的人和公司整体少受损失。'},
+{who:'scanlon',text:'把打算用的规则向她本人解释，看她有没有理由拒绝。'}
+],
+factory:[
+{who:'mill',text:'出资人可以决定自己的财产怎么用，但不能把劳动者压到无法离开的地步。'},
+{who:'scanlon',text:'利润和命令权要能向车间里的人辩护，不能只向出资人解释。'},
+{who:'bentham',text:'哪种分法和决策，让厂里受影响的人总体更少痛苦。'},
+{who:'aristotle',text:'这样运转下去，会把人养成只听命令的人，还是能一起把事情做好的人。'}
+],
+housework:[
+{who:'mill',text:'人可以选择全职照料，这段关系却不能让人失去离开的可能。'},
+{who:'gilligan',text:'先问：如果没有独立收入，谁会被留在这段关系里，谁会被扔下。'},
+{who:'kant',text:'不能把全职照料的人只当成家里其他人去工作的手段。'},
+{who:'bentham',text:'照料让别人能够外出挣钱，这份贡献应该算进家庭的收入。'}
+],
+ai:[
+{who:'bentham',text:'利润增加、岗位减少，要看哪种分配让被裁的人和留下的人总体少吃亏。'},
+{who:'scanlon',text:'新增的钱要能向被裁掉的那个人解释，而不是只向股东解释。'},
+{who:'kant',text:'不能把被替换的人仅仅当成省下来的成本。'},
+{who:'aristotle',text:'工具改变工作以后，还留不留得下一种值得反复做的劳动。'}
+],
+scholarship:[
+{who:'bentham',text:'钱给出去以后，谁更能因此把书读下去、少受一次中断。'},
+{who:'mill',text:'已经证明自己的人应当被看见，但不能把没有退路的人彻底排除。'},
+{who:'kant',text:'名额规则要能普遍化，不能把某人只当成激励其他人的例子。'},
+{who:'noddings',text:'先看谁一旦没有这笔钱，这段求学就断了。'}
+],
+medical:[
+{who:'bentham',text:'优先给生存概率更高的人，让这台设备多救回一条命。'},
+{who:'kant',text:'不能按谁更有用把人分成工具。顺序或抽签比算计更说得通。'},
+{who:'gilligan',text:'不要先丢掉那个没有任何别的办法的人。'},
+{who:'scanlon',text:'把分配规则向没被选中的人讲一遍，看他们能否拒绝。'}
+],
+privacy:[
+{who:'bentham',text:'若暴力明显减少，记录所有人的活动可以接受。'},
+{who:'kant',text:'不能为了安全把每个人都当成可被监视的手段。'},
+{who:'mill',text:'多数人的安全不能建立在无人能退出的持续注视上。'},
+{who:'scanlon',text:'这条监控要能向从未伤害别人的那个人辩护。'}
+],
+community:[
+{who:'aristotle',text:'看哪种做法能让社区里的人养成一起做决定的能力。'},
+{who:'bentham',text:'专家若能让工程少出错、少伤人，就该由他们拍板。'},
+{who:'mill',text:'承担后果的居民要有投票和反对的余地。'},
+{who:'scanlon',text:'规则要能向会被噪声和搬迁击中的人解释。'}
+]
+};
+ISSUES.forEach(it=>{it.options=CHOICES[it.id]||[]});
+const DIMS=['总幸福','普遍义务','德性实践','关怀关系','合理拒斥','自由与伤害'];
+let S={page:'home',mode:8,turn:0,answers:[],testMsgs:[],ended:false,result:null,coins:0,figure:'mill',figureMsgs:[],online:false,thinking:false,completed:0,dailyDay:'',dailyChoice:-1,profile:'kant',debateIssue:'birth',debaters:['bentham','kant'],debateMsgs:[],debateReply:'kant',bank:''};
+try{Object.assign(S,JSON.parse(localStorage.getItem('phy_demo')||'{}'))}catch(e){}
+S.thinking=false;
+const known=new Set(BASE.map(p=>p.id));
+if(S.bank!=='ethics8'){S.bank='ethics8';S.testMsgs=[];S.answers=[];S.turn=0;S.ended=false;S.result=null;S.figureMsgs=[];S.debateMsgs=[];S.figure='mill';S.debaters=['bentham','kant'];S.debateIssue='birth';S.debateReply='kant'}
+if(!known.has(S.figure))S.figure='mill';
+if(S.result&&!known.has(S.result.id))S.result=null;
+if(!Array.isArray(S.debaters))S.debaters=[];
+S.debaters=S.debaters.filter(id=>known.has(id));
+if(!Array.isArray(S.debateMsgs))S.debateMsgs=[];
+if(S.testKind!=='qa'&&S.testKind!=='choice')S.testKind='qa';
+if(S.testDepth!=='simple'&&S.testDepth!=='complex')S.testDepth=S.mode===4?'simple':'complex';
+if(!Array.isArray(S.picks))S.picks=[];
+if(!Number.isFinite(Number(S.paperOffset)))S.paperOffset=0;
+S.paperOffset=Number(S.paperOffset)||0;
+S.mode=S.testDepth==='simple'?4:8;
+const persist=()=>{const copy={...S,thinking:false};localStorage.setItem('phy_demo',JSON.stringify(copy))};
+const escapeHtml=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const toast=s=>{const e=$('toast');e.textContent=s;e.style.display='block';setTimeout(()=>e.style.display='none',2600)};
+const person=id=>BASE.find(x=>x.id===id)||BASE[0];
+const issueOf=id=>ISSUES.find(x=>x.id===id)||ISSUES[0];
+const nav=[['home','发现'],['test','哲学人格测试'],['hall','对话馆'],['debate','辩论场'],['library','哲学家'],['me','我的']];
+const mobileNav=[['home','发现'],['hall','对话'],['debate','辩论'],['library','介绍'],['me','我的']];
+function header(title,sub){return `<div class="tape">ETHICS POSTER</div><h1 class="top-title">${title}</h1><p class="muted">${sub||''}</p>`}
+function render(){
+  $('sideNav').innerHTML=nav.map(([id,title])=>`<button class="nav ${S.page===id?'active':''}" onclick="go('${id}')">${title}</button>`).join('');
+  $('mobileNav').innerHTML=mobileNav.map(([id,title])=>`<button class="${S.page===id?'active':''}" onclick="go('${id}')">${title}</button>`).join('');
+  $('coinTop').textContent=S.coins;
+  const testGate=S.page==='test'&&!S.ended&&!(S.testMsgs&&S.testMsgs.length);
+  const studio=S.page==='hall'||(S.page==='test'&&!S.ended&&!testGate);
+  document.body.classList.toggle('studio-lock',studio);
+  document.body.classList.toggle('test-gate',testGate);
+  document.body.classList.toggle('front',S.page==='home');
+  document.body.classList.toggle('arena',S.page==='arena');
+  const pages={home,test:testView,result:resultView,hall:hallView,library:libraryView,profile:profileView,debate:debateView,setup:setupView,arena:arenaView,me:meView};
+  $('view').innerHTML=(pages[S.page]||home)();
+  document.body.style.backgroundColor=testGate?'#fff':'#f6f1e8';
+  document.body.style.backgroundPosition='center';
+  document.body.style.backgroundSize='cover';
+  document.body.style.backgroundImage=testGate?'none':"url('img/background/4.png')";
+  persist();
+  if(S.page==='hall'){const e=$('chatbox');if(e)e.scrollTop=S.figureMsgs.length?e.scrollHeight:0}
+  if(S.page==='home')mountPaper();
+}
+function go(p){S.page=p;render();window.scrollTo({top:0,behavior:'smooth'})}
+function addCoins(n){S.coins+=n;toast('获得 '+n+' 思想火花')}
+function cutouts(){return `<div class="cuts">${lineup().map(p=>`<span class="cut"><img src="${p.img}" alt="${p.person}"></span>`).join('')}</div>`}
+function issueCard(it,tape){return `<button class="issue" onclick="openIssue('${it.id}')"><span class="school-tag">${it.school}</span><span class="issue-body"><span class="tape">${tape||'ISSUE'}</span><h3>${it.title}</h3><p>${it.ask}</p></span></button>`}
+function paperDate(offset){
+  const d=new Date();
+  d.setHours(12,0,0,0);
+  d.setDate(d.getDate()+(Number(offset)||0));
+  return d;
+}
+function issueForDate(d){
+  const day=Math.floor((Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())-Date.UTC(d.getFullYear(),0,1))/86400000);
+  return ISSUES[((day%ISSUES.length)+ISSUES.length)%ISSUES.length];
+}
+let paperDir=0,paperAnim=0;
+function shiftPaper(dir){
+  paperDir=dir;
+  S.paperOffset=(Number(S.paperOffset)||0)+dir;
+  render();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function pageTurn(dir){
+  const el=$('paper');
+  if(!el){shiftPaper(dir);return}
+  const token=++paperAnim;
+  el.classList.add('turning');
+  el.style.transition='transform .48s ease';
+  el.style.transformOrigin=dir>0?'left center':'right center';
+  el.style.transform='rotateY('+(dir>0?-88:88)+'deg)';
+  const done=()=>{if(token!==paperAnim)return;paperAnim++;shiftPaper(dir)};
+  el.addEventListener('transitionend',done,{once:true});
+  setTimeout(done,540);
+}
+function mountPaper(){
+  const el=$('paper');
+  if(!el)return;
+  bindPaper(el);
+  if(!paperDir)return;
+  const dir=paperDir;
+  paperDir=0;
+  el.style.transition='none';
+  el.style.transformOrigin=dir>0?'right center':'left center';
+  el.style.transform='rotateY('+(dir>0?88:-88)+'deg)';
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    el.style.transition='transform .48s ease';
+    el.style.transform='rotateY(0deg)';
+  }));
+}
+function bindPaper(el){
+  if(el.dataset.bound)return;
+  el.dataset.bound='1';
+  let x0=null,dx=0,active=false,pid=null,moved=false;
+  el.addEventListener('pointerdown',e=>{
+    if(e.button!=null&&e.button!==0)return;
+    paperAnim++;
+    x0=e.clientX;dx=0;active=true;moved=false;pid=e.pointerId;
+    el._y0=e.clientY;
+  });
+  el.addEventListener('pointermove',e=>{
+    if(!active||e.pointerId!==pid)return;
+    dx=e.clientX-x0;
+    const dy=e.clientY-el._y0;
+    if(!moved){
+      if(Math.abs(dx)<10&&Math.abs(dy)<10)return;
+      if(Math.abs(dy)>Math.abs(dx)){active=false;x0=null;return}
+      moved=true;
+      el.classList.add('dragging');
+      try{el.setPointerCapture(pid)}catch(err){}
+    }
+    const w=el.getBoundingClientRect().width||1;
+    const ang=Math.max(-78,Math.min(78,dx/w*80));
+    el.style.transition='none';
+    el.style.transformOrigin=dx<0?'left center':'right center';
+    el.style.transform='rotateY('+ang+'deg)';
+  });
+  const finish=e=>{
+    if(!active||(e&&e.pointerId!=null&&e.pointerId!==pid))return;
+    active=false;
+    el.classList.remove('dragging');
+    if(moved&&Math.abs(dx)>64){
+      const dir=dx<0?1:-1;
+      const token=++paperAnim;
+      el.style.transition='transform .42s ease';
+      el.style.transformOrigin=dir>0?'left center':'right center';
+      el.style.transform='rotateY('+(dir>0?-88:88)+'deg)';
+      const done=()=>{if(token!==paperAnim)return;paperAnim++;shiftPaper(dir)};
+      el.addEventListener('transitionend',done,{once:true});
+      setTimeout(done,500);
+    }else{
+      el.style.transition='transform .28s ease';
+      el.style.transform='rotateY(0deg)';
+    }
+    if(moved){
+      const stop=ev=>{ev.preventDefault();ev.stopPropagation();el.removeEventListener('click',stop,true)};
+      el.addEventListener('click',stop,true);
+    }
+    x0=null;dx=0;
+  };
+  el.addEventListener('pointerup',finish);
+  el.addEventListener('pointercancel',finish);
+  el.addEventListener('dragstart',e=>e.preventDefault());
+}
+document.addEventListener('keydown',e=>{
+  if(S.page!=='home')return;
+  const tag=e.target&&e.target.tagName;
+  if(tag==='INPUT'||tag==='TEXTAREA')return;
+  if(e.key==='ArrowLeft'){e.preventDefault();pageTurn(-1)}
+  if(e.key==='ArrowRight'){e.preventDefault();pageTurn(1)}
+});
+function home(){
+  const offset=Number(S.paperOffset)||0;
+  const date=paperDate(offset);
+  const day=issueForDate(date);
+  const when=date.toLocaleDateString('zh-CN',{year:'numeric',month:'long',day:'numeric',weekday:'long'});
+  const label=offset===0?'今日议题':offset===-1?'昨日议题':offset===1?'明日议题':'本期议题';
+  const stories=ISSUES.map(it=>`<button class="story" onclick="openIssue('${it.id}')"><span class="kicker">${it.school}</span><strong>${it.title}</strong><span class="ask">${it.ask}</span></button>`).join('');
+  const faces=lineup().map(p=>`<img src="${p.img}" alt="${p.person}" title="${p.person}">`).join('');
+  const castPeople=lineup().filter(p=>p.school===day.school);
+  const cast=`<aside class="lead-cast${castPeople.length>1?' many':''}">${castPeople.map(p=>`<button class="lead-face" type="button" onclick="S.profile='${p.id}';go('profile')"><img src="${p.img}" alt="${escapeHtml(p.person)}"><span class="lead-name">${escapeHtml(p.person)}</span><span class="lead-meta">${escapeHtml(p.years)}</span></button>`).join('')}</aside>`;
+  return `<div class="paper-wrap"><button class="paper-nav prev" type="button" onclick="pageTurn(-1)" aria-label="前一天">‹</button><article class="news" id="paper"><header class="mast"><p class="mast-en">You Are Invited · Ethics Poster</p><h1>思有引力</h1><div class="mast-rule"></div><div class="mast-meta"><span>${when}</span><span>伦理立场 · 八个议题</span><span class="actions mast-actions"><button onclick="go('debate')">进入辩论场</button><button onclick="go('hall')">去对话馆</button></span></div></header><p class="paper-hint">向右看昨天 · 向左看明天</p><div class="faces-line"><span class="faces-cap">撰稿</span>${faces}</div><section class="lead"><div class="lead-main"><p class="kicker">${label} · ${day.school}</p><h2>${day.title}</h2><p class="deck">${day.ask}</p><div class="lead-copy"><p>${day.era}</p></div><button class="lead-open" onclick="openIssue('${day.id}')">阅读并进入这场辩论</button></div>${cast}</section><section class="folio"><p class="folio-label">本期目录</p><div class="stories">${stories}</div></section></article><button class="paper-nav next" type="button" onclick="pageTurn(1)" aria-label="后一天">›</button></div>`
+}
+function askIssueInHall(id){const it=issueOf(id);S.figureMsgs=[];S.page='hall';render();setTimeout(()=>{const el=$('hallInput');if(el)el.value=it.ask},0)}
+function testCount(){return S.testDepth==='simple'?4:8}
+function setTestKind(kind){if(S.testMsgs.length)return;S.testKind=kind;render()}
+function setTestDepth(depth){if(S.testMsgs.length)return;S.testDepth=depth;S.mode=testCount();render()}
+function testView(){
+  if(S.ended)return resultView();
+  const started=S.testMsgs.length>0;
+  const count=testCount();
+  const choice=S.testKind==='choice';
+  const unit=choice?'题':'轮';
+  const finishing=started&&S.thinking&&S.turn>=count;
+  const loadingNext=started&&!choice&&S.thinking&&!finishing&&S.testMsgs[S.testMsgs.length-1].role==='user';
+  const qIndex=Math.min(S.answers.length,Math.max(count-1,0));
+  const it=ISSUES[qIndex]||ISSUES[0];
+  const answered=S.answers.map((a,i)=>`<article class="answered-item"><b>${String(i+1).padStart(2,'0')}</b><div><strong>${escapeHtml(ISSUES[i].title)}</strong><p>${escapeHtml(a.length>36?a.slice(0,36)+'…':a)}</p></div></article>`).join('');
+  const side=`<aside class="side-col answered-col"><div class="col-head"><h2>已回答问题</h2>${started?'<button class="outline small" type="button" onclick="restartTest()">重来</button>':''}</div><div class="answered-list">${answered||'<p class="answered-empty">答过的题会留在这里。右边一次只放一道。</p>'}</div></aside>`;
+  if(!started){
+    return `<div class="test-hero"><h1>测一测你的哲学人格</h1><p class="test-en">“Test Your Philosophical Personality?”</p><div class="test-picks"><div class="test-pick"><span>题目类型</span><div class="test-opts"><button class="test-opt ${S.testKind==='qa'?'on':''}" type="button" onclick="setTestKind('qa')">问答</button><button class="test-opt ${choice?'on':''}" type="button" onclick="setTestKind('choice')">选择</button></div></div><div class="test-pick"><span>题目数目</span><div class="test-opts"><button class="test-opt ${S.testDepth==='simple'?'on':''}" type="button" onclick="setTestDepth('simple')">简单</button><button class="test-opt ${S.testDepth==='complex'?'on':''}" type="button" onclick="setTestDepth('complex')">复杂</button></div></div></div><button class="test-go" type="button" onclick="startTest()">去测试 ↗</button></div><div class="test-stage"><img src="img/background/人物背景.png" alt=""></div>`;
+  }
+  let stage;
+  if(finishing){
+    stage=`<section class="stage-card"><p class="q-kicker">哲学人格测试</p><h2>${count} ${unit}已经走完</h2><p class="q-body">正在把你的回答收成一个暂时的参照。</p></section>`;
+  }else if(loadingNext){
+    stage=`<section class="stage-card"><p class="q-kicker">第 ${Math.min(S.turn+1,count)} / ${count} ${unit}</p><h2>下一题</h2><p class="q-body">正在按你的上一句整理这一题。</p></section>`;
+  }else if(choice){
+    const opts=(it.options||[]).map((op,i)=>`<button class="choice" type="button" onclick="pickChoice(${i})" ${S.thinking?'disabled':''}>${escapeHtml(op.text)}</button>`).join('');
+    stage=`<section class="stage-card"><p class="q-kicker">第 ${qIndex+1} / ${count} 题 · ${escapeHtml(it.school)}</p><h2>${escapeHtml(it.title)}</h2><p class="q-body">${escapeHtml(it.ask)}</p><p class="q-scene">${escapeHtml(it.scene)}</p><div class="choice-list">${opts}</div></section>`;
+  }else{
+    const raw=[...S.testMsgs].reverse().find(m=>m.role==='assistant');
+    let text=raw?raw.content.replace(/^第\s*\d+\s*[题轮]\s*[·.．]\s*[^\n]*\n?/,'').trim():it.ask;
+    if(!text)text=it.ask;
+    const extra=text!==it.ask?`<p class="q-scene">${escapeHtml(it.ask)}</p>`:'';
+    stage=`<section class="stage-card"><p class="q-kicker">第 ${qIndex+1} / ${count} 轮 · ${escapeHtml(it.school)}</p><h2>${escapeHtml(it.title)}</h2><p class="q-body">${escapeHtml(text)}</p>${extra}<p class="q-scene">${escapeHtml(it.scene)}</p></section>`;
+  }
+  const hints=started&&!choice&&!S.thinking?(it.lenses||[]).map((lens,i)=>`<button class="hint" type="button" onclick="fillLens(${i})">${escapeHtml(lens)}</button>`).join(''):'';
+  const dock=!started?`<div class="dock"><p class="muted">${choice?'选好题数后开始。每题点一种看法。':'选好轮次后开始。回答写在这一条里，气泡会给出这一题常见的几种看法。'}</p></div>`:(choice?`<div class="dock"><p class="muted">点一种看法，就进入下一题。当前是${S.testDepth==='simple'?'简单 4 题':'复杂 8 题'}。</p></div>`:`<form class="dock" onsubmit="sendAnswer(event)"><div class="hints">${hints}</div><div class="send"><textarea id="answerBox" ${S.thinking?'disabled':''} required placeholder="写下你的取舍。点上面的气泡，可以把它当成这一题的开头"></textarea><button class="primary" ${S.thinking?'disabled':''}>发送</button></div></form>`);
+  return `<div class="workspace test">${side}${stage}${dock}</div>`;
+}
+function bubble(m,speaker){return `<div class="bubble ${m.role==='user'?'user':''}"><span class="by">${m.role==='user'?'我':(speaker||'引导')}</span>${escapeHtml(m.content)}</div>`}
+function startTest(){S.mode=testCount();S.turn=0;S.answers=[];S.picks=[];S.ended=false;S.result=null;const q=ISSUES[0];S.testMsgs=[{role:'assistant',content:'第 1 '+(S.testKind==='choice'?'题':'轮')+' · '+q.title+'\n'+q.ask}];go('test')}
+function restartTest(){S.testMsgs=[];S.answers=[];S.picks=[];S.turn=0;S.ended=false;S.result=null;render()}
+function pickChoice(i){
+  if(S.thinking||S.testKind!=='choice')return;
+  const it=ISSUES[S.answers.length];
+  const opt=(it&&it.options||[])[i];
+  if(!opt)return;
+  S.answers.push(opt.text);S.picks.push(opt.who);S.testMsgs.push({role:'user',content:opt.text});S.turn++;
+  if(S.turn>=testCount()){S.thinking=true;render();finishTest().finally(()=>{S.thinking=false;render()});return}
+  const next=ISSUES[S.turn];
+  S.testMsgs.push({role:'assistant',content:'第 '+(S.turn+1)+' 题 · '+next.title+'\n'+next.ask});
+  render();
+}
+function userKey(){return (localStorage.getItem('phy_user_key')||'').trim()}
+function saveUserKey(){const v=($('userKey').value||'').trim();if(!v){toast('请先填写密钥');return}localStorage.setItem('phy_user_key',v);$('userKey').value='';toast('密钥只保存在这台浏览器');status()}
+function clearUserKey(){localStorage.removeItem('phy_user_key');if($('userKey'))$('userKey').value='';toast('已清除本机密钥');status()}
+async function api(messages){
+  const key=userKey();
+  if(key){
+    const resp=await fetch('https://api.deepseek.com/chat/completions',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},body:JSON.stringify({model:'deepseek-chat',messages,temperature:0.75,max_tokens:1100})});
+    const d=await resp.json().catch(()=>({}));
+    if(!resp.ok)throw new Error((d.error&&d.error.message)||'密钥或网络无效');
+    return d.choices[0].message.content;
+  }
+  const resp=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages})});
+  const d=await resp.json();
+  if(!resp.ok)throw new Error(d.error||'连接失败');
+  return d.content;
+}
+async function sendAnswer(e){
+  e.preventDefault();if(S.thinking)return;
+  const ans=$('answerBox').value.trim();if(!ans)return;
+  S.answers.push(ans);S.testMsgs.push({role:'user',content:ans});S.turn++;S.thinking=true;render();
+  try{
+    if(S.turn>=testCount()){await finishTest()}
+    else{
+      const next=ISSUES[S.turn];
+      let reply=`第 ${S.turn+1} 题 · ${next.title}\n${next.ask}`;
+      if(S.online){
+        const prompt=`你是伦理立场访谈的引导者。题库只有这些议题，按顺序进行，现在必须进入第${S.turn+1}题「${next.title}」。原题是：${next.ask}。你可以顺着用户上一句的用词把场景说得更具体，但不可换成别的主题，不可给结论，只问一个问题，120字以内。`;
+        const context=S.testMsgs.slice(-8).map(x=>({role:x.role,content:x.content}));
+        reply=await api([{role:'system',content:prompt},...context]);
+      }
+      S.testMsgs.push({role:'assistant',content:reply});
+    }
+  }catch(err){
+    toast('模型暂不可用，改用题库原文');
+    if(S.turn<testCount()){const next=ISSUES[S.turn];S.testMsgs.push({role:'assistant',content:`第 ${S.turn+1} 题 · ${next.title}\n${next.ask}`})}
+  }finally{S.thinking=false;render()}
+}
+const LEX={
+bentham:['总体','大家','最多','痛苦','幸福','人数','计算','整体'],
+mill:['自由','伤害','个性','讨论','多数','强制','发展','独立'],
+kant:['原则','应当','尊严','工具','普遍','义务','不能','规则'],
+aristotle:['习惯','品格','过度','平衡','实践','城邦','德性','培养'],
+gilligan:['关系','抛弃','听见','责任','具体的人','照顾','声音'],
+noddings:['关怀','回应','照料','接受','学校','日常','被照顾'],
+scanlon:['解释','拒绝','理由','向他','每个人','辩护','不能接受']
+};
+const DIM_OF={bentham:[0],mill:[0,5],kant:[1],aristotle:[2],gilligan:[3],noddings:[3],scanlon:[4]};
+function localAnalysis(){
+  const txt=S.answers.join(' ');
+  const seed=[...txt].reduce((a,c)=>a+c.charCodeAt(0),0);
+  if(S.testKind==='choice'&&Array.isArray(S.picks)&&S.picks.length){
+    const tally={};
+    S.picks.forEach(id=>{tally[id]=(tally[id]||0)+1});
+    const ranked=Object.entries(tally).sort((a,b)=>b[1]-a[1]||S.picks.lastIndexOf(b[0])-S.picks.lastIndexOf(a[0]));
+    const best=ranked[0][0];
+    const step=Math.round(80/S.picks.length);
+    const dims=DIMS.map(()=>12);
+    S.picks.forEach(id=>{(DIM_OF[id]||[]).forEach(i=>{dims[i]=Math.min(100,dims[i]+step)})});
+    const names=ranked.map(([id,n])=>person(id).person+' '+n+' 次').join('，');
+    const tied=ranked.filter(x=>x[1]===ranked[0][1]).map(x=>person(x[0]).person);
+    const tieNote=tied.length>1?` ${tied.join('和')}票数相同，较后的题目更靠近${person(best).person}。`:'';
+    return {id:best,similar:ranked.slice(1,3).map(x=>x[0]),tally:ranked.map(([id,n])=>({id,n})),dimensions:dims,reason:`这 ${S.picks.length} 道选择题按你点过的看法计票：${names}。票数最高的是${person(best).person}。${tieNote}这是选项汇总，不是性格测量。`,motto:person(best).keys.join(' / ')};
+  }
+  const scores=BASE.map(p=>({id:p.id,s:LEX[p.id].reduce((a,w)=>a+(txt.split(w).length-1),0)}));
+  scores.sort((a,b)=>b.s-a.s);
+  const best=scores[0].s>0?scores[0].id:BASE[seed%BASE.length].id;
+  const idx=BASE.findIndex(x=>x.id===best);
+  return {id:best,similar:scores.filter(x=>x.id!==best).slice(0,2).map(x=>x.id),dimensions:DIMS.map((_,i)=>35+(seed*(i+3)+idx*17)%55),reason:`这 ${testCount()} 轮里，你说过：“${(S.answers.find(a=>a.length>8)||S.answers[0]||'').slice(0,70)}”。本地匹配只看用词和这套立场的关注点是否靠近，不是测量。`,motto:'先说清你不愿抛弃谁。'};
+}
+async function finishTest(){
+  let result=localAnalysis();
+  if(S.online && S.testKind!=='choice'){
+    try{
+      const raw=await api([{role:'system',content:'你是谨慎的伦理立场分析师。只依据回答，在下列 id 中选最接近的一位：'+BASE.map(p=>p.id+':'+p.person+'/'+p.school).join('、')+'。只返回 JSON，不要 markdown：{"id":"候选id","similar":["id","id"],"dimensions":[55,55,55,55,55,55],"reason":"160字内援引用户原话，并说明这是思想类比不是诊断","motto":"20字以内"}。六维依次是总幸福、普遍义务、德性实践、关怀关系、合理拒斥、自由与伤害，取值0-100。'},{role:'user',content:S.answers.map((a,i)=>`第${i+1}题 [${ISSUES[i].title}]：${a}`).join('\n')}]);
+      const obj=JSON.parse(raw.replace(/```(?:json)?/g,'').trim());
+      if(known.has(obj.id)&&Array.isArray(obj.dimensions)&&obj.dimensions.length===6){result={...result,...obj};result.similar=(obj.similar||[]).filter(id=>known.has(id)&&id!==obj.id).slice(0,2);result.dimensions=obj.dimensions.map(n=>Math.max(0,Math.min(100,Number(n)||50)))}
+    }catch(e){toast('分析暂不可用，先用本地匹配')}
+  }
+  S.result=result;S.ended=true;S.completed++;addCoins(50);S.page='result';
+}
+function radarChart(values){
+  const cx=220,cy=196,R=100,n=DIMS.length;
+  const at=(i,t)=>{const a=-Math.PI/2+i*2*Math.PI/n;return [cx+Math.cos(a)*R*t,cy+Math.sin(a)*R*t]};
+  const poly=t=>DIMS.map((_,i)=>at(i,t).map(v=>v.toFixed(1)).join(',')).join(' ');
+  const rings=[1,.75,.5,.25].map(t=>`<polygon points="${poly(t)}" fill="none" stroke="rgba(28,26,23,.22)"/>`).join('');
+  const spokes=DIMS.map((_,i)=>{const [x,y]=at(i,1);return `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="rgba(28,26,23,.22)"/>`}).join('');
+  const shape=DIMS.map((_,i)=>at(i,Math.max(0,Math.min(100,Number(values[i])||0))/100).map(v=>v.toFixed(1)).join(',')).join(' ');
+  const labels=DIMS.map((name,i)=>{
+    const [x,y]=at(i,1.36);
+    const anchor=Math.abs(x-cx)<14?'middle':x<cx?'end':'start';
+    return `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" text-anchor="${anchor}" dominant-baseline="middle" font-size="13" fill="#1c1a17" font-family="'Noto Serif SC',serif">${escapeHtml(name)} ${Math.round(Number(values[i])||0)}</text>`;
+  }).join('');
+  return `<figure class="radar"><svg viewBox="0 0 440 392" role="img" aria-label="六维雷达图">${rings}${spokes}<polygon points="${shape}" fill="rgba(44,70,201,.22)" stroke="#2c46c9" stroke-width="2" stroke-linejoin="round"/>${labels}</svg></figure>`;
+}
+function resultView(){
+  if(!S.result)return `${header('伦理立场','做完一轮测试，会在这七位里找一个暂时最靠近的参照。')}<button class="primary" onclick="go('test')">开始测试</button>`;
+  const p=person(S.result.id),r=S.result;
+  const votes=(r.tally||[]).map(t=>person(t.id).person+' '+t.n+' 次').join(' · ');
+  return `${header('一个暂时的参照','它说明你的回答更靠近谁的问题意识，不是给你发身份。')}<div class="profile"><div class="profile-card ${p.on==='#1c1a17'?'inked':''}" style="background:${p.color};color:${p.on}"><div class="tape">${p.en}</div><img class="portrait" src="${p.img}" alt="${p.person}"><h2>${p.person}</h2><p>${p.school} · ${p.years}</p><p>${escapeHtml(r.motto||p.keys.join(' / '))}</p></div><div class="panel dossier"><h2>为什么会靠近${p.person}</h2><p>${escapeHtml(r.reason)}</p>${votes?`<p class="muted">计票：${escapeHtml(votes)}</p>`:''}<h3>六维只是示意</h3>${radarChart(r.dimensions||[])}<p class="footer-note">这些数字不是量表分数。</p><p class="muted">还可以并读：${(r.similar||[]).map(id=>person(id).person).join(' · ')||'再听另外两位'}</p><div class="actions"><button class="primary small" onclick="S.figure='${p.id}';S.figureMsgs=[];go('hall')">和${p.person}谈谈</button><button class="outline small" onclick="restartTest();go('test')">再测一次</button></div></div></div>`
+}
+function hallView(){
+  const p=person(S.figure);
+  const msgs=S.figureMsgs.length?S.figureMsgs.map(m=>bubble(m,p.person)).join(''):`<div class="bubble"><span class="by">${escapeHtml(p.person)}</span>${escapeHtml(p.hello)}</div>`;
+  const thinking=S.thinking?`<div class="bubble"><span class="by">${escapeHtml(p.person)}</span>正在想这一步…</div>`:'';
+  const faces=lineup().map(x=>`<button class="face-pick ${x.id===p.id?'on':''}" type="button" onclick="pickFigure('${x.id}')" title="${escapeHtml(x.person)}"><img src="${x.img}" alt="${escapeHtml(x.person)}"></button>`).join('');
+  const hints=ISSUES.map((issue,i)=>`<button class="hint" type="button" onclick="fillHall(${i})">${escapeHtml(issue.title)}</button>`).join('');
+  return `<div class="workspace hall"><div class="side-col"><div class="portrait-stage" style="box-shadow:6px 6px 0 ${p.color}"><img src="${p.img}" alt="${escapeHtml(p.person)}"><div class="portrait-name">${escapeHtml(p.person)}</div></div><section class="bio-card"><div class="col-head"><h2>哲学家简介</h2><button class="outline small" type="button" onclick="S.profile='${p.id}';go('profile')">全文</button></div><p class="bio-meta">${escapeHtml(p.school)} · ${escapeHtml(p.years)}</p><div class="face-row">${faces}</div><div class="bio-scroll"><p>${escapeHtml(p.identity)}</p><p>${escapeHtml(p.ideas)}</p><p class="footer-note">${p.works.map(escapeHtml).join(' · ')}</p></div></section></div><section class="talk-card"><div class="chat" id="chatbox">${msgs}${thinking}</div></section><form class="dock" onsubmit="sendHall(event)"><div class="hints">${hints}</div><div class="send"><textarea id="hallInput" required placeholder="点一个气泡把议题放进输入框，或直接写你的处境" ${S.thinking?'disabled':''}></textarea><button class="primary" ${S.thinking?'disabled':''}>发送</button></div><p class="footer-note">模拟的是问题意识，不是本人发言，也不会编造原著引文。</p></form></div>`;
+}
+function pickFigure(id){S.figure=id;S.figureMsgs=[];render()}
+function fillHall(i){const el=$('hallInput');if(el){el.value=ISSUES[i].ask;el.focus()}}
+function fillAnswer(text){const el=$('answerBox');if(!el||el.disabled)return;if(!el.value.trim())el.value=text;el.focus()}
+function fillLens(i){const idx=Math.min(S.answers.length,ISSUES.length-1);const lens=(ISSUES[idx].lenses||[])[i];if(lens)fillAnswer('从「'+lens+'」来看，')}
+function personaPrompt(p){
+  return `你在「思有引力」里陪当代用户思考。只依据${p.person}（${p.years}，${p.school}）的问题意识回应，不要舞台腔，不要声称自己是本人。
+身份：${p.identity}
+思想：${p.ideas}
+著作只可点名，不可编造引文：${p.works.join('、')}
+把握方式：${p.voice}
+规则：
+1. 中文，120到220字。
+2. 必须接住用户刚刚这句话里的具体事情和用词。
+3. 若已有你的上一轮，禁止换个问句重复。用户补了新内容，就要多一个分辨。
+4. 不编造原著原文、数据和个人轶事。拿不准就直说。
+5. 结尾只问一个问题，问题里要出现用户这句话中的某个词。
+表述用「从${p.person}的想法来看」。`;
+}
+function hallContext(){return S.figureMsgs.filter(m=>m.role==='user'||m.role==='assistant').slice(-12)}
+async function sendHall(e){
+  e.preventDefault();if(S.thinking)return;
+  const v=$('hallInput').value.trim();if(!v)return;
+  S.figureMsgs.push({role:'user',content:v});S.thinking=true;render();
+  const p=person(S.figure);let reply='';
+  try{
+    if(!S.online)throw new Error('offline');
+    reply=await api([{role:'system',content:personaPrompt(p)},...hallContext()]);
+  }catch(err){
+    reply=userKey()?'这把密钥没能完成这次请求。请核对后再试。':(S.online?'这一轮没能连上模型，请再试一次。':'请先到「我的」填写你自己的 DeepSeek 密钥，再和'+p.person+'继续谈。\n\n'+p.hello);
+    if(S.online)toast('模型暂不可用');
+  }
+  S.figureMsgs.push({role:'assistant',content:reply});
+  if(S.figureMsgs.filter(x=>x.role==='user').length%3===0)addCoins(15);
+  S.thinking=false;render();
+}
+function libraryView(){
+  return `${header('哲学家','点开一位，看身份、思想、著作和轶事。这些文字同时是对话馆和辩论场的角色提示。')}<div class="scatter">${lineup().map(p=>posterCard(p,`S.profile='${p.id}';go('profile')`)).join('')}</div>`
+}
+function profileView(){
+  const p=person(S.profile);
+  return `${header(p.person,p.school+' · '+p.years)}<div class="profile"><div class="profile-card ${p.on==='#1c1a17'?'inked':''}" style="background:${p.color};color:${p.on}"><div class="tape">${p.en}</div><img class="portrait" src="${p.img}" alt="${p.person}"><h2>${p.person}</h2><p>${p.keys.join(' / ')}</p></div><div class="panel dossier"><h3>身份</h3><p>${p.identity}</p><h3>主要思想</h3><p>${p.ideas}</p><h3>著作</h3><ul class="works">${p.works.map(w=>`<li>${w}</li>`).join('')}</ul><h3>趣事</h3><p>${p.anecdote}</p><h3>谈话时会抓住什么</h3><p>${p.voice}</p><div class="actions"><button class="primary small" onclick="S.figure='${p.id}';S.figureMsgs=[];go('hall')">和${p.person}谈谈</button><button class="outline small" onclick="addDebater('${p.id}')">带去辩论场</button></div></div></div>`
+}
+function addDebater(id){if(!S.debaters.includes(id))S.debaters.push(id);S.debateReply=id;go('debate')}
+function debateView(){
+  return `${header('议题辩论场','先选一道题。进入之后再决定请哪几位思想家发言，房间会带上这道题的时代背景。')}<div class="issue-grid">${ISSUES.map(it=>issueCard(it,S.debateIssue===it.id?'当前议题':'ISSUE')).join('')}</div>`
+}
+function openIssue(id){if(S.debateIssue!==id)S.debateMsgs=[];S.debateIssue=id;if(!S.debaters.includes(S.debateReply))S.debateReply=S.debaters[0]||'kant';go('setup')}
+function toggleDebater(id){
+  if(S.debaters.includes(id))S.debaters=S.debaters.filter(x=>x!==id);
+  else S.debaters.push(id);
+  if(!S.debaters.includes(S.debateReply))S.debateReply=S.debaters[0]||'';
+  render();
+}
+function setupView(){
+  const it=issueOf(S.debateIssue);
+  return `${header(it.title,'选至少两位思想家。边沁和密尔可以同时在场，他们并不说同一种功利。')}<div class="era" style="border-color:${it.color}"><span class="school-tag">${it.school}</span><strong>时代背景 · ${it.school}</strong><p class="muted">${it.era}</p><p>${it.scene}</p><p class="footer-note">这场在争：${it.tension}</p><p class="footer-note">议题里常见的其他标签：${it.lenses.join('、')}。发言的仍然只是你选中的这几位。</p></div>
+  <div class="actions"><button class="primary" type="button" onclick="enterArena()">进入这一场辩论</button><button class="outline" type="button" onclick="go('debate')">换一道题</button><span class="muted">已选 ${S.debaters.length} 位，至少两位</span></div>
+  <div class="people">${lineup().map(p=>{const on=S.debaters.includes(p.id);return `<button class="poster ${p.on==='#1c1a17'?'inked':''}${on?' picked':''}" style="background:${p.color};color:${p.on}" onclick="toggleDebater('${p.id}')" aria-pressed="${on}"><span class="school-tag">${p.school}</span><span class="vname">${on?'入选':p.en}</span><img class="face" src="${p.img}" alt="${p.person}"><h3>${p.person}</h3><p>${p.years}</p>${on?'<span class="tick" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M3.2 8.2 6.4 11.4 12.8 4.6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>':''}</button>`}).join('')}</div>
+  `
+}
+function enterArena(){if(S.debaters.length<2){toast('至少请两位思想家');return}if(!S.debaters.includes(S.debateReply))S.debateReply=S.debaters[0];go('arena')}
+function debatePrompt(p,it){
+  const cast=S.debaters.map(id=>person(id).person).join('、');
+  return `你在「思有引力」的一场辩论里，只写${p.person}的发言。不要替其他在场者写台词，不要声称自己是历史本人。
+议题：${it.title}
+原题：${it.ask}
+场景：${it.scene}
+时代背景：${it.era}
+这一场真正的张力：${it.tension}
+你的把握方式：${p.voice}
+思想约束：${p.ideas}
+在场：${cast}
+规则：
+1. 中文，80到120字，短到能放进一个气泡。
+2. 先接住这道题里的具体事实，再给出判断标准。
+3. 若上文有别的发言，点出你和他在标准上哪里不同，不要嘲笑人。
+4. 不编造引文和数据。古人没有写过的新技术，直接说你是在用旧标准看新情况。
+5. 最后把话传给在场的另一位，或问用户一个包含议题关键词的问题。
+用「从${p.person}的想法来看」起头。`;
+}
+function debateContext(){
+  return S.debateMsgs.slice(-10).map(m=>({role:m.role==='user'?'user':'assistant',content:m.role==='user'?m.content:'【'+person(m.speaker).person+'】'+m.content}));
+}
+function localStance(p,it){
+  return `从${p.person}的想法来看，「${it.title}」里我先抓住的是：${it.tension}。${p.voice}若要继续，请点另一位，看他是否接受这个标准。`;
+}
+function lastWord(id){for(let i=S.debateMsgs.length-1;i>=0;i--){const m=S.debateMsgs[i];if(m.role==='assistant'&&m.speaker===id)return m.content}return ''}
+function lastUser(){for(let i=S.debateMsgs.length-1;i>=0;i--){if(S.debateMsgs[i].role==='user')return S.debateMsgs[i].content}return ''}
+function roundSeats(cast){
+  const n=cast.length;
+  if(n===1) return [{p:cast[0],x:50,y:16,s:1.05}];
+  const back=n>2?cast.slice(1,-1):[];
+  const span=Math.min(124,28*Math.max(back.length,1)+24);
+  const seats=back.map((p,i)=>{
+    const t=back.length===1?0.5:i/(back.length-1);
+    const a=(270-span/2+t*span)*Math.PI/180;
+    const mid=1-Math.abs(t-0.5)*2;
+    return {p,x:+(50+Math.cos(a)*32).toFixed(2),y:+(60+Math.sin(a)*38).toFixed(2),s:+(0.72+mid*0.22).toFixed(2)};
+  });
+  const yFront=n===2?18:32;
+  const sFront=n<=3?1.02:1.08;
+  return [{p:cast[0],x:n===2?22:12,y:yFront,s:sFront},...seats,{p:cast[n-1],x:n===2?78:88,y:yFront,s:sFront}];
+}
+function arenaView(){
+  const it=issueOf(S.debateIssue);
+  const cast=lineup().filter(p=>S.debaters.includes(p.id));
+  const active=person(S.debaters.includes(S.debateReply)?S.debateReply:(cast[0]&&cast[0].id));
+  const waiting=!lastWord(active.id);
+  const line=S.thinking&&S.debateReply===active.id?'正在组织这一轮…':(lastWord(active.id)||'还没开口。点头像，请这位先说。');
+  const mine=lastUser();
+  const placed=roundSeats(cast);
+  const busts=placed.map(s=>`<button class="round-seat" type="button" style="left:${s.x}%;top:${s.y}%;--s:${s.s}" onclick="speakAs('${s.p.id}')" ${S.thinking?'disabled':''} title="请${escapeHtml(s.p.person)}发言"><span class="bust"><img src="${s.p.img}" alt="${escapeHtml(s.p.person)}"></span></button>`).join('');
+  const pills=placed.map(s=>`<button class="round-pill${Math.abs(s.x-50)<8?' high':''}${s.p.id===active.id?' on':''}" type="button" style="left:${s.x}%;top:${s.y}%;--s:${s.s}" onclick="speakAs('${s.p.id}')" ${S.thinking?'disabled':''}>${escapeHtml(s.p.person)}</button>`).join('');
+  return `<div class="round">${busts}<section class="round-table"><h2>${escapeHtml(it.title)}</h2><p class="round-who">${escapeHtml(active.person)} · ${escapeHtml(active.school)}</p><p class="round-line${waiting&&!S.thinking?' wait':''}">${escapeHtml(line)}</p>${mine?`<p class="round-mine">你 · ${escapeHtml(mine)}</p>`:''}<form class="round-send" onsubmit="sendDebate(event)"><textarea id="debateInput" required placeholder="插一句，黄标的那位会回应" ${S.thinking?'disabled':''}></textarea><button class="primary" ${S.thinking?'disabled':''}>发送</button></form><button class="round-adjust" type="button" onclick="go('setup')">调整人选</button></section>${pills}</div>`
+}
+function chooseReply(id){S.debateReply=id;render()}
+async function speakAs(id){
+  if(S.thinking)return;
+  if(!S.debaters.includes(id))return;
+  S.debateReply=id;S.thinking=true;render();
+  const p=person(id),it=issueOf(S.debateIssue);let reply='';
+  try{
+    if(!S.online)throw new Error('offline');
+    reply=await api([{role:'system',content:debatePrompt(p,it)},...debateContext()]);
+  }catch(err){
+    reply=userKey()?'这把密钥没能完成这次发言。请核对后再试。':(S.online?'这一轮没能连上模型，请再试一次。':localStance(p,it));
+    if(S.online)toast('模型暂不可用');
+  }
+  S.debateMsgs.push({role:'assistant',speaker:id,content:reply});
+  if(S.debateMsgs.length%3===0)addCoins(10);
+  S.thinking=false;render();
+}
+async function sendDebate(e){
+  e.preventDefault();if(S.thinking)return;
+  const v=$('debateInput').value.trim();if(!v)return;
+  const who=S.debaters.includes(S.debateReply)?S.debateReply:S.debaters[0];
+  S.debateMsgs.push({role:'user',content:v});
+  S.thinking=true;render();
+  const p=person(who),it=issueOf(S.debateIssue);let reply='';
+  try{
+    if(!S.online)throw new Error('offline');
+    reply=await api([{role:'system',content:debatePrompt(p,it)},...debateContext()]);
+  }catch(err){
+    reply=userKey()?'这把密钥没能完成这次发言。请核对后再试。':(S.online?'这一轮没能连上模型，请再试一次。':localStance(p,it));
+  }
+  S.debateMsgs.push({role:'assistant',speaker:who,content:reply});
+  S.thinking=false;render();
+}
+function meView(){
+  const saved=!!userKey();
+  return `${header('我的','记录只在这台浏览器里。')}<div class="layout2"><div class="panel"><h2>最近的参照</h2>${S.result?`<p class="serif" style="font-size:28px">${person(S.result.id).person}</p><p class="muted">${person(S.result.id).school}</p><button class="outline small" onclick="go('result')">查看</button>`:'<p class="muted">还没有完成哲学人格测试。</p><button class="primary small" onclick="go(\'test\')">去做测试</button>'}</div><div class="panel"><h2>密钥</h2><p class="muted">${saved?'当前使用你填写的密钥。粘贴新的可以覆盖。':'还没有密钥。对话和辩论只会给一句演示立场。'}</p><form class="keyform" onsubmit="saveUserKey();return false"><input id="userKey" type="password" autocomplete="off" spellcheck="false" placeholder="${saved?'已保存，可粘贴新密钥覆盖':'粘贴你的 DeepSeek 密钥'}"><button class="primary small" type="submit">使用</button><button class="outline small" type="button" onclick="clearUserKey()">清除</button></form><p class="footer-note">密钥只留在这台浏览器，请求时直接发给 DeepSeek，不会写进页面。</p><h2>数据</h2><p>思想火花 ${S.coins} · 完成测试 ${S.completed}</p><button class="outline small" onclick="if(confirm('清空这台设备上的测试、对话和辩论记录？')){localStorage.removeItem('phy_demo');location.reload()}">清除本地记录</button></div></div>`
+}
+async function status(){
+  const hasKey=!!userKey();let proxy=false;
+  try{const r=await fetch('/api/status');const j=await r.json();proxy=!!j.online}catch(e){}
+  S.online=hasKey||proxy;
+  $('apiDot').classList.toggle('on',S.online);
+  $('apiState').textContent=hasKey?'使用你填写的密钥':(proxy?'本机服务已连接':'演示模式，密钥在「我的」');
+  render();
+}
+status();
+</script>
+</body>
+</html>
